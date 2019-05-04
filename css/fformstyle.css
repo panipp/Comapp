@@ -1,0 +1,21 @@
+td,
+th {
+    padding: 5px;
+}
+
+.fullTable {
+    right: 0;
+    position: fixed;
+    height: 100vh;
+    border-left: 2px solid #000;
+    overflow: auto;
+}
+
+#eletable {
+    z-index: 2;
+    background: #ffffff;
+}
+
+div {
+    overflow: auto;
+}

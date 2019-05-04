@@ -1,0 +1,294 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Edit Member</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+
+
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="css/add.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Modernizr JS -->
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+    <div id="colorlib-page">
+        <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+        <aside id="colorlib-aside" role="complementary" class="border js-fullheight">
+            <h1 id="colorlib-logo"><a href="add_hr.html"><span>Wo</span><span>rk</span></a></h1>
+            <nav id="colorlib-main-menu" role="navigation">
+                <ul>
+                    <li><a href="add_hr.html">Add Emp.</a></li>
+                    <li><a href="about_hr.html">About</a></li>
+                    <li><a href="news_hr.html">News</a></li>
+                    <li><a href="search_hr.html">Search</a></li>
+                </ul>
+            </nav>
+
+            <div class="colorlib-footer">
+            </div>
+
+        </aside>
+        <div id="colorlib-main">
+            <div class="colorlib-work">
+                <div class="container-fluid">
+                    <fieldset>
+                        <legend>Edit Member Information</legend>
+                        <div class="form-group">
+                            <label class="col control-label" for="id">Employee ID</label>
+                            <div class="col">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-briefcase"></i>
+                                    </div>
+                                    <input id="id" name="id" type="text" placeholder="XXXXXX" class="form-control input-md">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col control-label" for="Name (Full name)">Name (Full name)</label>
+                            <div class="col">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-user">
+                                        </i>
+                                    </div>
+                                    <input id="Name (Full name)" name="Name (Full name)" type="text" placeholder="XXXXX XXXXXXXXX" class="form-control input-md">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col control-label" for="Upload photo">Upload photo</label>
+                            <div class="col">
+                                <input id="Upload photo" name="Upload photo" class="input-file" type="file">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col control-label" for="Citizen">Citizen ID</label>
+                            <div class="col">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-sticky-note-o"></i>
+                                    </div>
+                                    <input id="Citizen" name="Citizen" type="text" placeholder="XXXXXXXXXXXXX" class="form-control input-md">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col control-label" for="Gender">Gender</label>
+                            <div class="col">
+                                <label class="radio-inline" for="Gender-0">
+                                    <input type="radio" name="Gender" id="Gender-0" value="1" checked="checked">
+                                    Male
+                                </label>
+                                <label class="radio-inline" for="Gender-1">
+                                    <input type="radio" name="Gender" id="Gender-1" value="2">
+                                    Female
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col control-label" for="dep">Department</label>
+                            <div class="col">
+                                <label class="radio-inline" for="d-0">
+                                    <input type="radio" name="dep" id="d-0" value="1" checked="checked">
+                                    Normal
+                                </label>
+                                <label class="radio-inline" for="d-1">
+                                    <input type="radio" name="dep" id="d-1" value="2">
+                                    HR
+                                </label>
+                                <label class="radio-inline" for="d-0">
+                                    <input type="radio" name="dep" id="d-0" value="3">
+                                    Manager
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col control-label" for="Date Of Birth">Date Of Birth</label>
+                            <div class="col">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-birthday-cake"></i>
+                                    </div>
+                                    <input id="Date Of Birth" name="Date Of Birth" type="text" placeholder="XX/XX/XXXX" class="form-control input-md">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col control-label" for="radios">Marital Status:</label>
+                            <div class="col">
+                                <label class="radio-inline" for="radios-0">
+                                    <input type="radio" name="radios" id="radios-0" value="1" checked="checked">
+                                    Married
+                                </label>
+                                <label class="radio-inline" for="radios-1">
+                                    <input type="radio" name="radios" id="radios-1" value="2">
+                                    Unmarried
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col control-label" for="Skills">Graduation</label>
+                            <div class="col">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-graduation-cap"></i>
+                                    </div>
+                                    <input id="grad" name="grad" type="text" placeholder="Bachelor of Accountancy" class="form-control input-md">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col control-label" for="Phone number ">Phone number </label>
+                            <div class="col">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-phone"></i>
+                                    </div>
+                                    <input id="Phone number " name="Phone number " type="text" placeholder="08XXXXXXXX" class="form-control input-md">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col control-label" for="Email Address">Email Address</label>
+                            <div class="col">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-envelope-o"></i>
+                                    </div>
+                                    <input id="Email Address" name="Email Address" type="text" placeholder="XXXXX@hotmail.com" class="form-control input-md">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col control-label" for="Address">Address</label>
+                            <div class="col">
+                                <textarea class="form-control" rows="10" id="Address" name="Address">Thammasat University</textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col control-label" for="area">Working area</label>
+                            <div class="col">
+                                <label class="radio-inline" for="area-0">
+                                    <input type="radio" name="area" id="area-0" value="1" checked="checked">
+                                    Central
+                                </label>
+                                <label class="radio-inline" for="area-1">
+                                    <input type="radio" name="area" id="area-1" value="2">
+                                    Northern
+                                </label>
+                                <label class="radio-inline" for="area-2">
+                                    <input type="radio" name="area" id="area-2" value="3">
+                                    Northeastern
+                                </label>
+                                <label class="radio-inline" for="area-3">
+                                    <input type="radio" name="area" id="area-3" value="4">
+                                    Southern
+                                </label>
+                                <label class="radio-inline" for="area-4">
+                                    <input type="radio" name="area" id="area-4" value="5">
+                                    Eastern
+                                </label>
+                                <label class="radio-inline" for="area-5">
+                                    <input type="radio" name="area" id="area-5" value="6">
+                                    Western
+                                </label>
+                            </div>
+                        </div>
+                        <!--ข้อมูลญาติ-->
+                        <br><br><legend>Emergency contact details</legend>
+                        <div class="form-group">
+                            <label class="col control-label" for="Name (Full name)2">Name (Full name)</label>
+                            <div class="col">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-user">
+                                        </i>
+                                    </div>
+                                    <input id="Name (Full name)2" name="Name (Full name)2" type="text" placeholder="XXXXX XXXXXXX" class="form-control input-md">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col control-label" for="rel">Relationship</label>
+                            <div class="col">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-sticky-note-o"></i>
+                                    </div>
+                                    <input id="rel" name="rel" type="text" placeholder="Wife" class="form-control input-md">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col control-label" for="Phone number2">Phone number</label>
+                            <div class="col">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-phone"></i>
+                                    </div>
+                                    <input id="Phone number2" name="Phone number2" type="text" placeholder="08XXXXXXXX" class="form-control input-md">
+                                </div>
+                            </div>
+                        </div>
+
+                        <br>
+                        <div class="form-group">
+                            <label class="col control-label"></label>
+                            <div class="col">
+                                <a href="#" class="btn btn-success">Update</a>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+    <!-- jQuery Easing -->
+    <script src="js/jquery.easing.1.3.js"></script>
+    <!-- Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+    <script src="js/jquery.waypoints.min.js"></script>
+    <!-- Flexslider -->
+    <script src="js/jquery.flexslider-min.js"></script>
+    <!-- Sticky Kit -->
+    <script src="js/sticky-kit.min.js"></script>
+
+    <!-- MAIN JS -->
+    <script src="js/main.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+</body>
+</html>
