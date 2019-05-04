@@ -1,10 +1,10 @@
 <?php include 'connect.php';
-
+	$_SESSION['staff'] = true;
 	$searching = preg_replace("#[^0-9a-z]#i","",$_GET['input']);
 	$query2 = "SELECT * FROM employee WHERE emp_id LIKE '%$searching%' OR firstname LIKE '%$searching%' OR lastname LIKE '%$searching%'";
 	$result2 = mysqli_query($db,$query2);
-	if(isset($_POST['staffsearchMng'])){
-		$mngstaff = $_POST['staffsearchMng'];
+	if(isset($_POST['staffsearchHR'])){
+		$mngstaff = $_POST['staffsearchHR'];
 		$searching = preg_replace("#[^0-9a-z]#i","",$mngstaff);
 		$query = "SELECT * FROM employee WHERE emp_id LIKE '%$searching%' OR firstname LIKE '%$searching%' OR lastname LIKE '%$searching%'";
 		$result = mysqli_query($db,$query);
@@ -81,7 +81,7 @@
 						<thead>
 						
 							<?php 
-								if($_SESSION['staff']&&!$_SESSION['proj']){
+								if($_SESSION['staff']){
 									echo ' <tr>
 								<th>Emp. ID</th>
 								<th>Name</th>

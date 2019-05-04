@@ -12,7 +12,7 @@
 		else{
 			header("Location: search_hrEdit.php?input=".$mngstaff."");
 			$_SESSION['staff'] = true;
-		}
+        }
 	}
 ?>
 

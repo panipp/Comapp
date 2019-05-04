@@ -73,9 +73,6 @@
 				$sqlEmployee =  "INSERT INTO employee (emp_id,citizenID,email,graduate,firstname,lastname,birthday,gender,address,phonenumber,maritalstatus,workingarea) 
 				VALUES ('$empID','$cID','$email','$graduate','$firstname','$lastname','$dob','$gender','$address','$phonenum','$status','$area')";
 				mysqli_query($db,$sqlEmployee);
-				$sqlFamily = "INSERT INTO family (firstname,lastname,relationship,phonenumber,emp_id) 
-				VALUES ('$famFirstname','$famLastname','$relation','$parentPhone','$empID')";	
-				mysqli_query($db,$sqlFamily);
 				if($department=="Normal"){
 					$sqlDep = "INSERT INTO staff (dep_id,emp_id) 
 					VALUES ('20000','$empID')";	
