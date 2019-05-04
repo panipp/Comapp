@@ -183,7 +183,8 @@ iframe {
   width: 390px;
   border-radius: 10px;
   overflow: hidden;
-
+  padding-top: 30px;
+  padding-bottom: 50px;
   background: transparent;
 }
 
@@ -195,6 +196,8 @@ iframe {
   width: 100%;
   border-radius: 10px;
   background-color: #fff;
+  padding-top: 5px;
+  padding-bottom: 33px;
 }
 
 .login100-form-logo {
@@ -222,7 +225,7 @@ iframe {
   line-height: 1.2;
   text-align: center;
   text-transform: uppercase;
-
+  padding-bottom: 41px;
   display: block;
 }
 
@@ -341,6 +344,7 @@ iframe {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 32px;
 }
 
 .login100-form-btn {
