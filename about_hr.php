@@ -1,14 +1,5 @@
 <?php
 	include 'connect.php';
-	$user = $_SESSION['loginHR'];
-	$sqlHrFam = "SELECT * FROM family WHERE emp_id = '$user'";
-	$result = mysqli_query($db,$sqlHrFam);
-	if($row = mysqli_fetch_assoc($result)){
-		$famFname = $row['firstname'];
-		$famLname = $row['lastname'];
-		$relation = $row['relationship'];
-		$phone = $row['phonenumber'];
-	}	
 ?>
 
 <!DOCTYPE HTML>
@@ -179,53 +170,7 @@
                            
                         </div>
                         <!--ข้อมูลญาติ-->
-                        <br><br><legend>Emergency contact details</legend>
-                        <div class="form-group">
-                            <label class="col control-label" for="Firstname2">Firstname</label>
-                            <div class="col">
-                                <div class="input-group">
-                                    <div class="input-group-addon">
-                                        <i class="fa fa-user">
-                                        </i>
-                                    </div>
-                                    <input id="Firstname2" name="Firstname2" type="text" placeholder="<?php echo ''.$famFname.''?>" class="form-control input-md" disabled>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col control-label" for="Lastname2">Lastname</label>
-                            <div class="col">
-                                <div class="input-group">
-                                    <div class="input-group-addon">
-                                        <i class="fa fa-user">
-                                        </i>
-                                    </div>
-                                    <input id="Lastname2" name="Lastname2" type="text" placeholder="<?php echo ''.$famLname.''?>" class="form-control input-md" disabled>
-                                </div>
-                            </div>
-                        </div>						
-                        <div class="form-group">
-                            <label class="col control-label" for="rel">Relationship</label>
-                            <div class="col">
-                                <div class="input-group">
-                                    <div class="input-group-addon">
-                                        <i class="fa fa-sticky-note-o"></i>
-                                    </div>
-                                    <input id="rel" name="rel" type="text" placeholder="<?php echo ''.$relation.''?>" class="form-control input-md" disabled>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col control-label" for="Phone number2">Phone number</label>
-                            <div class="col">
-                                <div class="input-group">
-                                    <div class="input-group-addon">
-                                        <i class="fa fa-phone"></i>
-                                    </div>
-                                    <input id="Phone number2" name="Phone number2" type="text" placeholder="<?php echo ''.$phone.''?>" class="form-control input-md" disabled>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </fieldset>
                 </div>
             </div>

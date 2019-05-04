@@ -15,14 +15,6 @@
 		$email = $row['email'];
 		$address = $row['address'];
 		$area = $row['workingarea'];
-	} 
-	$sqlHrFam = "SELECT * FROM family WHERE emp_id = '$empID'";
-	$result = mysqli_query($db,$sqlHrFam);
-	if($row = mysqli_fetch_assoc($result)){
-		$famFname = $row['firstname'];
-		$famLname = $row['lastname'];
-		$relation = $row['relationship'];
-		$famPhone = $row['phonenumber'];
 	}
 	if(isset($_POST['update'])){
 		$eID = $_POST['id'];
@@ -38,19 +30,12 @@
 		$address = $_POST['Address'];
 		$area = $_POST['area'];
 		$department = $_POST['dep'];
-		$famFirstname = $_POST['Firstname2'];
-		$famLastname = $_POST['Lastname2'];
-		$relation = $_POST['rel'];
-		$parentPhone = $_POST['phonenumber2'];
 		
 		$sql = "UPDATE employee SET emp_id='$eID',citizenID='$cID',firstname ='$firstname',lastname ='$lastname',
 		gender='$gender',birthday='$dob',maritalstatus='$status',graduate='$graduate',phonenumber='$phone',email='$email',
 		address='$address',workingarea='$area'
 		WHERE emp_id ='$empID'";
 		mysqli_query($db,$sql);
-		$sqlFamily = "UPDATE family SET firstname='$famFirstname',lastname='$famLastname',relationship='$relation',phonenumber='$parentPhone',emp_id='$eID'
-		WHERE emp_id ='$empID'";	
-		mysqli_query($db,$sqlFamily);
 		if($department=="Normal"){
 			$sqlDep = "UPDATE staff SET dep_id = '20000',emp_id='eID' WHERE emp_id ='$empID'";
 			mysqli_query($db,$sqlDep);
@@ -297,56 +282,7 @@
 									</label>
 								</div>
 							</div>
-							<!--ข้อมูลญาติ-->
-							<br><br><legend>Emergency contact details</legend>
-								<div class="form-group">
-									<label class="col control-label" for="Firstname2">Firstname</label>
-									<div class="col">
-										<div class="input-group">
-											<div class="input-group-addon">
-												<i class="fa fa-user">
-												</i>
-											</div>
-											<input id="Firstname2" name="Firstname2" type="text" placeholder="<?php echo $famFname;?>" value="<?php echo $famFname;?>"class="form-control input-md">
-										</div>
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col control-label" for="Lastname2">Lastname</label>
-									<div class="col">
-										<div class="input-group">
-											<div class="input-group-addon">
-												<i class="fa fa-user">
-												</i>
-											</div>
-											<input id="Lastname2" name="Lastname2" type="text" placeholder="<?php echo $famLname;?>" value="<?php echo $famLname;?>" class="form-control input-md">
-										</div>
-									</div>
-								</div>
-							<div class="form-group">
-								<label class="col control-label" for="rel">Relationship</label>
-								<div class="col">
-									<div class="input-group">
-										<div class="input-group-addon">
-											<i class="fa fa-sticky-note-o"></i>
-										</div>
-										<input id="rel" name="rel" type="text" placeholder="<?php echo $relation;?>" value="<?php echo $relation;?>" class="form-control input-md">
-									</div>
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col control-label" for="Phone number2">Phone number</label>
-								<div class="col">
-									<div class="input-group">
-										<div class="input-group-addon">
-											<i class="fa fa-phone"></i>
-										</div>
-										<input id="Phone number2" name="phonenumber2" type="text" placeholder="<?php echo $famPhone;?>"value="<?php echo $famPhone;?>"class="form-control input-md">
-									</div>
-								</div>
-							</div>
 
-							<br>
 							<div class="form-group">
 								<label class="col control-label"></label>
 								<div class="col">

@@ -25,29 +25,6 @@
 			$sqlHr = "SELECT b.emp_id,b.citizenID,b.email,b.graduate,b.firstname,b.lastname,b.birthday,b.gender,b.address,b.phonenumber,b.maritalstatus,b.workingarea 
 			FROM hr a,employee b WHERE a.emp_id = '$user' AND a.emp_id = b.emp_id";
 				$resultHr = mysqli_query($db,$sqlHr);
-			$sqlMng = "SELECT b.emp_id,b.citizenID,b.email,b.graduate,b.firstname,b.lastname,b.birthday,b.gender,b.address,b.phonenumber,b.maritalstatus,b.workingarea 
-			FROM manager a,employee b WHERE a.emp_id = '$user' AND a.emp_id = b.emp_id";
-				$resultMng = mysqli_query($db,$sqlMng);
-			$sqlStaff = "SELECT b.emp_id,b.citizenID,b.email,b.graduate,b.firstname,b.lastname,b.birthday,b.gender,b.address,b.phonenumber,b.maritalstatus,b.workingarea 
-			FROM staff a,employee b WHERE a.emp_id = '$user' AND a.emp_id = b.emp_id";
-				$resultStaff = mysqli_query($db,$sqlStaff);
-				
-			if($row = mysqli_fetch_assoc($resultStaff)){
-				$_SESSION['loginStaff'] = $row['emp_id'];
-				$_SESSION['staffCitizenID'] = $row['citizenID'];
-				$_SESSION['staffFirstname'] = $row['firstname'];
-				$_SESSION['staffLastname'] = $row['lastname'];
-				$_SESSION['staffGender'] = $row['gender'];
-				$_SESSION['staffDob'] = $row['birthday'];
-				$_SESSION['staffStatus'] = $row['maritalstatus'];
-				$_SESSION['staffGraduate'] = $row['graduate'];
-				$_SESSION['staffPhone'] = $row['phonenumber'];
-				$_SESSION['staffEmail'] = $row['email'];
-				$_SESSION['staffAddress'] = $row['address'];
-				$_SESSION['staffArea'] = $row['workingarea'];
-				header("Location: index.php?login=success");
-				exit();
-			} 
 			if($row = mysqli_fetch_assoc($resultHr)){
 				$_SESSION['loginHR'] = $row['emp_id'];
 				$_SESSION['hrFirstname'] = $row['firstname'];
@@ -64,22 +41,9 @@
 				header("Location: add_hr.php?login=success");
 				exit();
 			}
-			if($row = mysqli_fetch_assoc($resultMng)){
-				$_SESSION['loginMng'] = $row['emp_id'];
-				$_SESSION['mngFirstname'] = $row['firstname'];
-				$_SESSION['mngLastname'] = $row['lastname'];
-				$_SESSION['mngCitizenID'] = $row['citizenID'];
-				$_SESSION['mngGender'] = $row['gender'];
-				$_SESSION['mngDob'] = $row['birthday'];
-				$_SESSION['mngStatus'] = $row['maritalstatus'];
-				$_SESSION['mngGraduate'] = $row['graduate'];
-				$_SESSION['mngPhone'] = $row['phonenumber'];
-				$_SESSION['mngEmail'] = $row['email'];
-				$_SESSION['mngAddress'] = $row['address'];
-				$_SESSION['mngArea'] = $row['workingarea'];
-				header("Location: add_pj.php?login=success");
-				exit();
-			}			
+			else{
+				echo '<script>alert("For HR only");</script>';
+			}
 		}
 	}
 		
@@ -98,10 +62,6 @@
 			$email = $_POST['Email'];
 			$address = $_POST['Address'];
 			$area = $_POST['area'];
-			$famFirstname = $_POST['Firstname2'];
-			$famLastname = $_POST['Lastname2'];
-			$relation = $_POST['rel'];
-			$parentPhone = $_POST['Phonenumber2'];
 			
 			$sql = "SELECT * FROM employee WHERE emp_ID = '$empID'";
 			$result = mysqli_query($db,$sql);
@@ -136,54 +96,5 @@
 		}else{
 			echo '<script>alert("Wrong Date Pattern");</script>';
 		}
-	}
-	
-	if(isset($_POST['nextPJ'])){
-		if(preg_match('/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/', $_POST["start"])
-			&& preg_match('/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/', $_POST["end"])){
-			$pjID = $_POST['pj_id'];
-			$_SESSION['spjID']=$pjID;
-			$pjname = $_POST['pj'];
-			$_SESSION['spjName']=$pjname;
-			$pjlocation = $_POST['Address'];
-			$_SESSION['spjLo']=$pjlocation;
-			$start = $_POST['start'];
-			$_SESSION['spjStart']=$start;
-			$end = $_POST['end'];
-			$_SESSION['spjEnd']=$end;
-			$area = $_POST["area"];
-			$_SESSION['pjArea'] = $area;
-			$time = $_POST["time"];
-			$_SESSION['spjTime']=$time;
-			$customerF = $_POST["Firstname"];
-			$customerL = $_POST["Lastname"];
-			$customerGen = $_POST["Gender"];
-			$customerEmail = $_POST["Email"];
-			$customerPhone = $_POST["Phone"];
-			
-			$sqlPJ =  "INSERT INTO project (proj_id,project_name,finishdate,startdate,projectlocation,workingarea) 
-			VALUES ('$pjID','$pjname','$end','$start','$pjlocation','$area')";
-			mysqli_query($db,$sqlPJ);
-			$sqlCustomer = "INSERT INTO customer (proj_id,gender,firstname,lastname,email,phonenumber) 
-			VALUES ('$pjID','$customerGen','$customerF','$customerL','$customerEmail','$customerPhone')";	
-			mysqli_query($db,$sqlCustomer);
-			
-			header("Location: assign.php");
-		
-		}else{
-			echo '<script>alert("Wrong Date Pattern");</script>';
-		}
-		
-	}
-	
-	if(isset($_POST['submitPJ'])){
-		$empID = $_POST['employ'];
-		$time = $_POST['time'];
-		$sql = "UPDATE project SET emp_id='$empID', time='$time' WHERE proj_id='$_SESSION[spjID]'";
-		mysqli_query($db,$sql);
-		$sqlNoti =  "INSERT INTO noti (emp_id,proj_id,status) 
-		VALUES ('$empID','$_SESSION[spjID]','unread')";
-		mysqli_query($db,$sqlNoti);
-		echo '<script>alert("Success");</script>';
 	}
 ?>		
