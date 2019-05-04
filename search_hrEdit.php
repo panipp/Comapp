@@ -1,11 +1,9 @@
 <?php include 'connect.php';
 
 	$searching = preg_replace("#[^0-9a-z]#i","",$_GET['input']);
-	$query1 = "SELECT * FROM project WHERE proj_id LIKE '%$searching%' OR project_name LIKE '%$searching%' OR workingarea LIKE '%$searching%'";
 	$query2 = "SELECT * FROM employee WHERE emp_id LIKE '%$searching%' OR firstname LIKE '%$searching%' OR lastname LIKE '%$searching%'";
-	$result1 = mysqli_query($db,$query1);
 	$result2 = mysqli_query($db,$query2);
-	if(isset($_POST['staffsearchMng'])&& empty($_POST['projectsearchMng'])){
+	if(isset($_POST['staffsearchMng'])){
 		$mngstaff = $_POST['staffsearchMng'];
 		$searching = preg_replace("#[^0-9a-z]#i","",$mngstaff);
 		$query = "SELECT * FROM employee WHERE emp_id LIKE '%$searching%' OR firstname LIKE '%$searching%' OR lastname LIKE '%$searching%'";

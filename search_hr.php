@@ -1,7 +1,6 @@
 <?php include 'connect.php';
-	$_SESSION['proj'] = false;
 	$_SESSION['staff'] = false;
-	if(isset($_POST['staffsearchMng'])&& empty($_POST['projectsearchMng'])){
+	if(isset($_POST['staffsearchMng'])){
 		$mngstaff = $_POST['staffsearchMng'];
 		$searching = preg_replace("#[^0-9a-z]#i","",$mngstaff);
 		$query = "SELECT * FROM employee WHERE emp_id LIKE '%$searching%' OR firstname LIKE '%$searching%' OR lastname LIKE '%$searching%'";

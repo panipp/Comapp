@@ -25,13 +25,6 @@
 			$sqlHr = "SELECT b.emp_id,b.citizenID,b.email,b.graduate,b.firstname,b.lastname,b.birthday,b.gender,b.address,b.phonenumber,b.maritalstatus,b.workingarea 
 			FROM hr a,employee b WHERE a.emp_id = '$user' AND a.emp_id = b.emp_id";
 				$resultHr = mysqli_query($db,$sqlHr);
-				
-			$sqlMng = "SELECT b.emp_id,b.citizenID,b.email,b.graduate,b.firstname,b.lastname,b.birthday,b.gender,b.address,b.phonenumber,b.maritalstatus,b.workingarea 
-			FROM manager a,employee b WHERE a.emp_id = '$user' AND a.emp_id = b.emp_id";
-				$resultMng = mysqli_query($db,$sqlMng);
-			$sqlStaff = "SELECT b.emp_id,b.citizenID,b.email,b.graduate,b.firstname,b.lastname,b.birthday,b.gender,b.address,b.phonenumber,b.maritalstatus,b.workingarea 
-			FROM staff a,employee b WHERE a.emp_id = '$user' AND a.emp_id = b.emp_id";
-				$resultStaff = mysqli_query($db,$sqlStaff);
 			if($row = mysqli_fetch_assoc($resultHr)){
 				$_SESSION['loginHR'] = $row['emp_id'];
 				$_SESSION['hrFirstname'] = $row['firstname'];
