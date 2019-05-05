@@ -1,4 +1,9 @@
 <?php include 'connect.php';
+	session_start();
+		if (!$_SESSION['hr_loggedin']){
+			echo "<script language='javascript'> alert('กรุณาเข้าสู่ระบบก่อน');window.location='login.php';</script>";
+	}
+
 	$empID = $_GET['employeeID'];
 	$sql = "SELECT* FROM employee WHERE emp_id = '$empID'";
 	$result = mysqli_query($db,$sql);
@@ -30,7 +35,7 @@
 		$address = $_POST['Address'];
 		$area = $_POST['area'];
 		$department = $_POST['dep'];
-		
+
 		$sql = "UPDATE employee SET emp_id='$eID',citizenID='$cID',firstname ='$firstname',lastname ='$lastname',
 		gender='$gender',birthday='$dob',maritalstatus='$status',graduate='$graduate',phonenumber='$phone',email='$email',
 		address='$address',workingarea='$area'
@@ -111,7 +116,7 @@
 										</div>
 									</div>
 								</div>
-								
+
 								<div class="form-group">
 									<label class="col control-label" for="Lastname">Lastname</label>
 									<div class="col">
@@ -273,7 +278,7 @@
 						</fieldset>
 					</div>
 				</div>
-			</form>	
+			</form>
         </div>
     </div>
     <script src="js/main.js"></script>
