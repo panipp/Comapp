@@ -4,18 +4,25 @@
 	$query2 = "SELECT * FROM employee WHERE emp_id LIKE '%$searching%' OR firstname LIKE '%$searching%' OR lastname LIKE '%$searching%'";
 	$result2 = mysqli_query($db,$query2);
 	if(isset($_POST['staffsearchHR'])){
-		$mngstaff = $_POST['staffsearchHR'];
-		$searching = preg_replace("#[^0-9a-z]#i","",$mngstaff);
-		$query = "SELECT * FROM employee WHERE emp_id LIKE '%$searching%' OR firstname LIKE '%$searching%' OR lastname LIKE '%$searching%'";
-		$result = mysqli_query($db,$query);
-		$check = mysqli_num_rows($result);
-		if($check == 0){
+		if(empty( $_POST['staffsearchHR'])){
 			echo '<script>alert("No Match Found");</script>';
-		}
-		else{
-			header("Location: search_hrEdit.php?input=".$mngstaff."");
 			$_SESSION['staff'] = true;
 		}
+		else{
+			$mngstaff = $_POST['staffsearchHR'];
+			$searching = preg_replace("#[^0-9a-z]#i","",$mngstaff);
+			$query = "SELECT * FROM employee WHERE emp_id LIKE '%$searching%' OR firstname LIKE '%$searching%' OR lastname LIKE '%$searching%'";
+			$result = mysqli_query($db,$query);
+			$check = mysqli_num_rows($result);
+			if($check == 0){
+				echo '<script>alert("No Match Found");</script>';
+			}
+			else{
+				header("Location: search_hrEdit.php?input=".$mngstaff."");
+				$_SESSION['staff'] = true;
+			}
+		}
+		
 	}
 	
 	if(isset($_POST['delete'])){
