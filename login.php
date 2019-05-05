@@ -10,7 +10,6 @@
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 	<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<script src="js/main.js"></script>
 </head>
 <body>
 	<div class="limiter">
