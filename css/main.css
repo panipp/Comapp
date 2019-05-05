@@ -1,10 +1,3 @@
-
-
-
-
-/*//////////////////////////////////////////////////////////////////
-[ FONT ]*/
-
 @font-face {
   font-family: Ubuntu-Regular;
   src: url('../fonts/ubuntu/Ubuntu-Regular.ttf'); 
@@ -15,105 +8,21 @@
   src: url('../fonts/ubuntu/Ubuntu-Bold.ttf'); 
 }
 
-
-
-
-/*//////////////////////////////////////////////////////////////////
-[ RESTYLE TAG ]*/
-
 * {
 	margin: 0px; 
 	padding: 0px; 
 	box-sizing: border-box;
 }
 
-body, html {
-	height: 100%;
-	font-family: Ubuntu-Regular, sans-serif;
-}
-
-/*---------------------------------------------*/
-a {
-	font-family: Ubuntu-Regular;
-	font-size: 14px;
-	line-height: 1.7;
-	color: #666666;
-	margin: 0px;
-	transition: all 0.4s;
-	-webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-}
-
-a:focus {
-	outline: none !important;
-}
-
-a:hover {
-	text-decoration: none;
-  color: #fff;
-}
-
-/*---------------------------------------------*/
-h1,h2,h3,h4,h5,h6 {
-	margin: 0px;
-}
-
-p {
-	font-family: Ubuntu-Regular;
-	font-size: 14px;
-	line-height: 1.7;
-	color: #666666;
-	margin: 0px;
-}
-
-ul, li {
-	margin: 0px;
-	list-style-type: none;
-}
-
-
-/*---------------------------------------------*/
 input {
 	outline: none;
 	border: none;
 }
 
-textarea {
-  outline: none;
-  border: none;
-}
-
-textarea:focus, input:focus {
+input:focus {
   border-color: transparent !important;
 }
 
-input:focus::-webkit-input-placeholder { color:transparent; }
-input:focus:-moz-placeholder { color:transparent; }
-input:focus::-moz-placeholder { color:transparent; }
-input:focus:-ms-input-placeholder { color:transparent; }
-
-textarea:focus::-webkit-input-placeholder { color:transparent; }
-textarea:focus:-moz-placeholder { color:transparent; }
-textarea:focus::-moz-placeholder { color:transparent; }
-textarea:focus:-ms-input-placeholder { color:transparent; }
-
-input::-webkit-input-placeholder { color: #555555;}
-input:-moz-placeholder { color: #555555;}
-input::-moz-placeholder { color: #555555;}
-input:-ms-input-placeholder { color: #555555;}
-
-textarea::-webkit-input-placeholder { color: #555555;}
-textarea:-moz-placeholder { color: #555555;}
-textarea::-moz-placeholder { color: #555555;}
-textarea:-ms-input-placeholder { color: #555555;}
-
-label {
-  margin: 0;
-  display: block;
-}
-
-/*---------------------------------------------*/
 button {
 	outline: none !important;
 	border: none;
@@ -124,24 +33,6 @@ button:hover {
 	cursor: pointer;
 }
 
-iframe {
-	border: none !important;
-}
-
-
-/*//////////////////////////////////////////////////////////////////
-[ Utility ]*/
-.txt1 {
-  font-family: Poppins-Regular;
-  font-size: 13px;
-  color: #e5e5e5;
-  line-height: 1.5;
-}
-
-
-/*//////////////////////////////////////////////////////////////////
-[ login ]*/
-
 .limiter {
   width: 100%;
   margin: 0 auto;
@@ -150,16 +41,11 @@ iframe {
 .container-login100 {
   width: 100%;  
   min-height: 100vh;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   padding: 15px;
-
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -188,34 +74,12 @@ iframe {
   background: transparent;
 }
 
-
-/*------------------------------------------------------------------
-[ Form ]*/
-
 .login100-form {
   width: 100%;
   border-radius: 10px;
   background-color: #fff;
   padding-top: 5px;
   padding-bottom: 33px;
-}
-
-.login100-form-logo {
-  font-size: 60px; 
-  color: #333333;
-
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background-color: #fff;
-  margin: 0 auto;
 }
 
 .login100-form-title {
@@ -229,10 +93,6 @@ iframe {
   display: block;
 }
 
-
-/*------------------------------------------------------------------
-[ Input ]*/
-
 .wrap-input100 {
   width: 100%;
   position: relative;
@@ -245,19 +105,14 @@ iframe {
   font-size: 20px;
   color: #555555;
   line-height: 1.2;
-
   display: block;
   width: 100%;
   height: 50px;
   background: transparent;
   padding: 0 10px 0 80px;
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
   transition: all 0.4s;
 }
 
-/*---------------------------------------------*/ 
 .focus-input100 {
   position: absolute;
   display: block;
@@ -268,41 +123,28 @@ iframe {
   pointer-events: none;
 }
 
-    .focus-input100::before {
-        content: "";
-        display: block;
-        position: absolute;
-        bottom: -1px;
-        left: 0;
-        width: 0;
-        height: 1px;
-        -webkit-transition: all 0.4s;
-        -o-transition: all 0.4s;
-        -moz-transition: all 0.4s;
-        transition: all 0.4s;
-        background: #243047;
-        background: -webkit-linear-gradient(left, #086387, #086387, #086387);
-        background: -o-linear-gradient(left, #086387, #086387, #086387);
-        background: -moz-linear-gradient(left, #086387, #086387, #086387);
-        background: linear-gradient(left, #086387, #086387, #086387);
-    }
+.focus-input100::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  transition: all 0.4s;
+  background: #243047;
+}
 
 .focus-input100::after {
   font-family: Linearicons-Free;
   font-size: 18px;
   color: #999999;
-
   content: attr(data-placeholder);
   display: block;
   width: 100%;
   position: absolute;
   top: 40px;
   left: 35px;
- 
-
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
   transition: all 0.4s;
 }
 
@@ -310,37 +152,17 @@ iframe {
   padding-left: 60px;
 }
 
-    .input100:focus + .focus-input100::after {
-        left: 23px;
-        color: #053f56;
-    }
+.input100:focus + .focus-input100::after {
+  left: 23px;
+  color: #053f56;
+}
 
 .input100:focus + .focus-input100::before {
   width: 100%;
 }
 
-.has-val.input100 + .focus-input100::after {
-    left: 23px;
-    color: #053f56;
-}
-
-.has-val.input100 + .focus-input100::before {
-  width: 100%;
-}
-
-.has-val.input100 {
-  padding-left: 60px;
-}
-
-
-/*------------------------------------------------------------------
-[ Button ]*/
 .container-login100-form-btn {
   width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -348,33 +170,26 @@ iframe {
 }
 
 .login100-form-btn {
-    font-family: Ubuntu-Bold;
-    font-size: 18px;
-    color: #fff;
-    line-height: 1.2;
-    text-transform: uppercase;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 20px;
-    min-width: 160px;
-    height: 42px;
-    border-radius: 21px;
-    background: #053f56;
-    background: -webkit-linear-gradient(left, #053f56, #053f56, #053f56);
-    background: -o-linear-gradient(left, #053f56, #053f56, #053f56);
-    background: -moz-linear-gradient(left, #053f56, #053f56, #053f56);
-    background: linear-gradient(left, #053f56, #053f56, #053f56);
-    position: relative;
-    z-index: 1;
-    -webkit-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    transition: all 0.4s;
+  font-family: Ubuntu-Bold;
+  font-size: 18px;
+  color: #fff;
+  line-height: 1.2;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  min-width: 160px;
+  height: 42px;
+  border-radius: 21px;
+  background: #053f56;
+  background: -webkit-linear-gradient(left, #053f56, #053f56, #053f56);
+  background: -o-linear-gradient(left, #053f56, #053f56, #053f56);
+  background: -moz-linear-gradient(left, #053f56, #053f56, #053f56);
+  background: linear-gradient(left, #053f56, #053f56, #053f56);
+  position: relative;
+  z-index: 1;
+  transition: all 0.4s;
 }
 
 .login100-form-btn::before {
@@ -389,10 +204,6 @@ iframe {
   top: 0;
   left: 0;
   opacity: 0;
-
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
   transition: all 0.4s;
 }
 
@@ -403,178 +214,3 @@ iframe {
 .login100-form-btn:hover:before {
   opacity: 1;
 }
-
-
-
-/*------------------------------------------------------------------
-[ Alert validate ]*/
-
-.validate-input {
-  position: relative;
-}
-
-.alert-validate::before {
-    content: attr(data-validate);
-    position: absolute;
-    max-width: 70%;
-    background-color: #fff;
-    border: 1px solid #890000;
-    border-radius: 2px;
-    padding: 4px 25px 4px 10px;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
-    right: 10px;
-    pointer-events: none;
-    font-family: Ubuntu-Bold;
-    color: #890000;
-    font-size: 13#890000px;
-    line-height: 1.4;
-    text-align: left;
-    visibility: hidden;
-    opacity: 0;
-    -webkit-transition: opacity 0.4s;
-    -o-transition: opacity 0.4s;
-    -moz-transition: opacity 0.4s;
-    transition: opacity 0.4s;
-}
-
-.alert-validate::after {
-    content: "\f12a";
-    font-family: FontAwesome;
-    font-size: 16px;
-    color: #890000;
-    display: block;
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
-    right: 15px;
-}
-
-.alert-validate:hover:before {
-  visibility: visible;
-  opacity: 1;
-}
-
-@media (max-width: 992px) {
-  .alert-validate::before {
-    visibility: visible;
-    opacity: 1;
-  }
-}
-
-/*//////////////////////////////////////////////////////////////////
-[ calendar ]*/
-body {
-    background-color: #333;
-    color: #aaa;
-    font-family: 'Josefin Sans';
-}
-
-.calendar {
-    width: 350px;
-    margin: 50px auto 0;
-}
-
-.calendar__month {
-    font-size: 20px;
-    font-weight: 800;
-    padding: 10px 0;
-    width: 100%;
-    position: relative;
-}
-
-.cal-month__previous,
-.cal-month__next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    &:hover
-
-{
-    background-color: #42A5F5;
-    box-shadow: 0 5px 5px -5px rgba(0,0,0,0.75);
-    border-radius: 50%;
-    font-weight: 800;
-    color: #111;
-}
-
-}
-
-.cal-month__next {
-    right: 0;
-}
-
-.cal-month__current {
-    text-align: center;
-    color: #e1e1e1;
-}
-
-.cal-head__day,
-.cal-body__day {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    float: left;
-}
-
-.cal-body__week,
-.calendar__head {
-    display: block;
-    height: 50px;
-    width: 350px;
-}
-
-.calendar__head {
-    line-height: 50px;
-    position: relative;
-    &:after
-
-{
-    content: ' ';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background-color: #90CAF9;
-}
-
-}
-
-.cal-body__day {
-    color: #777;
-    line-height: 50px;
-    text-align: center;
-    cursor: pointer;
-}
-
-.cal-day__month--current {
-    color: #e1e1e1;
-}
-
-.cal-day__day--today {
-    font-weight: 800;
-    color: #2196f3;
-}
-
-.cal-day__day--selected {
-    background-color: #2196f3;
-    box-shadow: 0 5px 10px -5px rgba(0, 0, 0, .75);
-    border-radius: 50%;
-    color: #111;
-}
-
-
-

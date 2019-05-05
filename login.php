@@ -13,34 +13,25 @@
 	<script src="js/main.js"></script>
 </head>
 <body>
-	
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
 			<div class="wrap-login100">
-				<span class="login100-form-title">
-					Account Login
-				</span>
+				<span class="login100-form-title">Account Login</span>
 				<form class="login100-form" method="POST" aciton="#">
 					<div class="wrap-input100" data-validate = "Enter username">
 						<input class="input100" type="text" name="username" placeholder="Username">
 						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
 					</div>
-
 					<div class="wrap-input100" data-validate="Enter password">
 						<input class="input100" type="password" name="pass" placeholder="Password">
 						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
 					</div>
-
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn" name = "submit">
-							Login
-						</button>
+						<button class="login100-form-btn" name = "submit">Login</button>
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
-	<div id="dropDownSelect1"></div>
-
 </body>
 </html>
