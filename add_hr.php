@@ -1,5 +1,9 @@
 <?php
 	include 'connect.php';
+	session_start();
+	if (!$_SESSION['hr_loggedin']){
+		echo "<script language='javascript'> alert('กรุณาเข้าสู่ระบบก่อน');window.location='login.php';</script>";
+}
 ?>
 
 <!DOCTYPE HTML>
@@ -63,7 +67,7 @@
 									</div>
 								</div>
 							</div>
-							
+
 							<div class="form-group">
 								<label class="col control-label" for="Lastname">Lastname</label>
 								<div class="col">
@@ -76,7 +80,7 @@
 									</div>
 								</div>
 							</div>
-							
+
 							<div class="form-group">
 								<label class="col control-label" for="Citizen">Citizen ID</label>
 								<div class="col">
@@ -224,7 +228,7 @@
 							</div>
 						</fieldset>
 					</div>
-				</form>	
+				</form>
             </div>
         </div>
     </div>

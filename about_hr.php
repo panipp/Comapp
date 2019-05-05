@@ -1,5 +1,10 @@
 <?php
 	include 'connect.php';
+	session_start();
+	if (!$_SESSION['hr_loggedin']){
+		echo "<script language='javascript'> alert('กรุณาเข้าสู่ระบบก่อน');window.location='login.php';</script>";
+
+}
 ?>
 
 <!DOCTYPE HTML>
@@ -38,7 +43,7 @@
                     <fieldset>
                         <legend>About Me</legend>
                         <div class="form-group">
-                            
+
                             <label class="col control-label" for="id">Employee ID</label>
                             <div class="col">
                                 <div class="input-group">
@@ -72,7 +77,7 @@
                                     <input id="Lastname" name="Lastname" type="text" placeholder="<?php echo''.$_SESSION["hrLastname"].'';?>" class="form-control input-md" disabled>
                                 </div>
                             </div>
-                        </div>						
+                        </div>
                         <div class="form-group">
                             <label class="col control-label" for="Citizen">Citizen ID</label>
                             <div class="col">
@@ -91,7 +96,7 @@
                         </div>
                         <div class="form-group">
                             <label class="col control-label" for="dep">Department: HR</label>
-                          
+
                         </div>
                         <div class="form-group">
                             <label class="col control-label" for="Date Of Birth">Date Of Birth</label>
@@ -108,7 +113,7 @@
 
                         <div class="form-group">
                             <label class="col control-label" for="radios">Marital Status: <?php echo''.$_SESSION['hrStatus'].'';?></label>
-                            
+
                         </div>
 
                         <div class="form-group">
@@ -154,10 +159,10 @@
                         </div>
                         <div class="form-group">
                             <label class="col control-label" for="area">Working area: <?php echo''.$_SESSION['hrArea'].'';?></label>
-                           
+
                         </div>
                         <!--ข้อมูลญาติ-->
-                        
+
                     </fieldset>
                 </div>
             </div>

@@ -1,18 +1,27 @@
 <?php include 'connect.php';
+session_start();
+	if (!$_SESSION['hr_loggedin']){
+		echo "<script language='javascript'> alert('กรุณาเข้าสู่ระบบก่อน');window.location='login.php';</script>";
+}
 	$_SESSION['staff'] = false;
 	if(isset($_POST['staffsearchMng'])){
-		$mngstaff = $_POST['staffsearchMng'];
-		$searching = preg_replace("#[^0-9a-z]#i","",$mngstaff);
-		$query = "SELECT * FROM employee WHERE emp_id LIKE '%$searching%' OR firstname LIKE '%$searching%' OR lastname LIKE '%$searching%'";
-		$result = mysqli_query($db,$query);
-		$check = mysqli_num_rows($result);
-		if($check == 0){
-			echo '<script>alert("No Match Found");</script>';
+		if(empty( $_POST['staffsearchMng'])){
+			$_SESSION['staff'] = true;
 		}
 		else{
-			header("Location: search_hrEdit.php?input=".$mngstaff."");
-			$_SESSION['staff'] = true;
-        }
+			$mngstaff = $_POST['staffsearchMng'];
+			$searching = preg_replace("#[^0-9a-z]#i","",$mngstaff);
+			$query = "SELECT * FROM employee WHERE emp_id LIKE '%$searching%' OR firstname LIKE '%$searching%' OR lastname LIKE '%$searching%'";
+			$result = mysqli_query($db,$query);
+			$check = mysqli_num_rows($result);
+			if($check == 0){
+				echo '<script>alert("No Match Found");</script>';
+			}
+			else{
+				header("Location: search_hrEdit.php?input=".$mngstaff."");
+				$_SESSION['staff'] = true;
+			}
+		}	
 	}
 ?>
 
@@ -43,9 +52,9 @@
                 </ul>
             </nav>
         </aside>
-        
+
         </div>
-        
+
 	<div id="colorlib-main">
 		<div class="colorlib-work">
 			<div class="row">
@@ -57,7 +66,7 @@
 				</center>
 			</div>
 		</div>
-	</div>      
+	</div>
 </body>
 <!-- MAIN JS -->
 <script src="js/main.js"></script>

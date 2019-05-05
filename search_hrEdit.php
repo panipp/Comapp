@@ -1,23 +1,34 @@
 <?php include 'connect.php';
+session_start();
+	if (!$_SESSION['hr_loggedin']){
+		echo "<script language='javascript'> alert('กรุณาเข้าสู่ระบบก่อน');window.location='login.php';</script>";
+}
 	$_SESSION['staff'] = true;
 	$searching = preg_replace("#[^0-9a-z]#i","",$_GET['input']);
 	$query2 = "SELECT * FROM employee WHERE emp_id LIKE '%$searching%' OR firstname LIKE '%$searching%' OR lastname LIKE '%$searching%'";
 	$result2 = mysqli_query($db,$query2);
 	if(isset($_POST['staffsearchHR'])){
-		$mngstaff = $_POST['staffsearchHR'];
-		$searching = preg_replace("#[^0-9a-z]#i","",$mngstaff);
-		$query = "SELECT * FROM employee WHERE emp_id LIKE '%$searching%' OR firstname LIKE '%$searching%' OR lastname LIKE '%$searching%'";
-		$result = mysqli_query($db,$query);
-		$check = mysqli_num_rows($result);
-		if($check == 0){
+		if(empty( $_POST['staffsearchHR'])){
 			echo '<script>alert("No Match Found");</script>';
-		}
-		else{
-			header("Location: search_hrEdit.php?input=".$mngstaff."");
 			$_SESSION['staff'] = true;
 		}
+		else{
+			$mngstaff = $_POST['staffsearchHR'];
+			$searching = preg_replace("#[^0-9a-z]#i","",$mngstaff);
+			$query = "SELECT * FROM employee WHERE emp_id LIKE '%$searching%' OR firstname LIKE '%$searching%' OR lastname LIKE '%$searching%'";
+			$result = mysqli_query($db,$query);
+			$check = mysqli_num_rows($result);
+			if($check == 0){
+				echo '<script>alert("No Match Found");</script>';
+			}
+			else{
+				header("Location: search_hrEdit.php?input=".$mngstaff."");
+				$_SESSION['staff'] = true;
+			}
+		}
+		
 	}
-	
+
 	if(isset($_POST['delete'])){
 		$del = $_POST['d'];
 		$sql = "DELETE FROM employee WHERE emp_id = '$del'";
@@ -67,14 +78,14 @@
 					<br />
 					<table class="table striped">
 						<thead>
-						
-							<?php 
+
+							<?php
 								if($_SESSION['staff']){
 									echo ' <tr>
 								<th>Emp. ID</th>
 								<th>Name</th>
 								<th>Department</th>
-								
+
 							</tr>';
 								while($row = mysqli_fetch_array($result2)){
 								$empID = $row['emp_id'];
@@ -109,7 +120,7 @@
 									<a href="member_edit.php?employeeID='.$empID.'">Edit</a>&#160;&#160;&#160;&#160;<a href="search_hr.php" id="delete" del_id="'.$empID.'">Delete</a></li>
 								</td>
 								</tr>';
-							}	
+							}
 								$_SESSION['staff'] = false;
 								}
 							?>
@@ -143,7 +154,7 @@
 			method  : "POST",
 			data  : {delete:1,d:remove_id},
 			success : function(data){
-				
+
 				$(".colorlib-work").html(data);
 			}
 		})

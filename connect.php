@@ -27,6 +27,7 @@
 				$resultHr = mysqli_query($db,$sqlHr);
 			if($row = mysqli_fetch_assoc($resultHr)){
 				$_SESSION['loginHR'] = $row['emp_id'];
+				$_SESSION['hr_loggedin'] = true;
 				$_SESSION['hrFirstname'] = $row['firstname'];
 				$_SESSION['hrLastname'] = $row['lastname'];
 				$_SESSION['hrCitizenID'] = $row['citizenID'];
