@@ -51,6 +51,7 @@
                     <li><a href="about_hr.php">About</a></li>
                     <li><a href="news_hr.php">News</a></li>
                     <li><a href="search_hr.php">Search</a></li>
+					<li><a href="login.php">Logout</a></li>
                 </ul>
             </nav>
         </aside>
