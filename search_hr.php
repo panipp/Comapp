@@ -1,4 +1,8 @@
 <?php include 'connect.php';
+session_start();
+	if (!$_SESSION['hr_loggedin']){
+		echo "<script language='javascript'> alert('กรุณาเข้าสู่ระบบก่อน');window.location='login.php';</script>";
+}
 	$_SESSION['staff'] = false;
 	if(isset($_POST['staffsearchMng'])){
 		if(empty( $_POST['staffsearchMng'])){
@@ -47,9 +51,9 @@
                 </ul>
             </nav>
         </aside>
-        
+
         </div>
-        
+
 	<div id="colorlib-main">
 		<div class="colorlib-work">
 			<div class="row">
@@ -61,7 +65,7 @@
 				</center>
 			</div>
 		</div>
-	</div>      
+	</div>
 </body>
 <!-- MAIN JS -->
 <script src="js/main.js"></script>

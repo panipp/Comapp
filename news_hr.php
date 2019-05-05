@@ -1,5 +1,9 @@
-<?php	
+<?php
 	include 'connect.php';
+	session_start();
+	if (!$_SESSION['hr_loggedin']){
+		echo "<script language='javascript'> alert('กรุณาเข้าสู่ระบบก่อน');window.location='login.php';</script>";
+}
 	if(isset($_POST['setNews'])){
 		$topic = $_POST['topic'];
         $detail = $_POST['information'];
@@ -25,8 +29,8 @@
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
-	<script src="js/main.js"></script> 
-    
+	<script src="js/main.js"></script>
+
 </head>
 <body>
 	<form method="POST">
@@ -48,7 +52,7 @@
 			<div id="colorlib-main">
 				<div class="colorlib-work">
 					<div class="container-fluid">
-					<?php 
+					<?php
 						$sql = "SELECT * FROM news";
 						$result = mysqli_query($db,$sql);
 						if(mysqli_num_rows($result) > 0){
@@ -59,7 +63,7 @@
 									<p>'.$detail.'</p>';
 							}
 						}
-						
+
 					?>
 						<br /><br />
 						<legend>Add News</legend>
@@ -85,6 +89,6 @@
 			</div>
 		</div>
 	</form>
-    
+
 </body>
 </html>

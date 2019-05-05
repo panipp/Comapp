@@ -1,4 +1,8 @@
 <?php include 'connect.php';
+session_start();
+	if (!$_SESSION['hr_loggedin']){
+		echo "<script language='javascript'> alert('กรุณาเข้าสู่ระบบก่อน');window.location='login.php';</script>";
+}
 	$_SESSION['staff'] = true;
 	$searching = preg_replace("#[^0-9a-z]#i","",$_GET['input']);
 	$query2 = "SELECT * FROM employee WHERE emp_id LIKE '%$searching%' OR firstname LIKE '%$searching%' OR lastname LIKE '%$searching%'";
@@ -24,7 +28,7 @@
 		}
 		
 	}
-	
+
 	if(isset($_POST['delete'])){
 		$del = $_POST['d'];
 		$sql = "DELETE FROM employee WHERE emp_id = '$del'";
@@ -73,14 +77,14 @@
 					<br />
 					<table class="table striped">
 						<thead>
-						
-							<?php 
+
+							<?php
 								if($_SESSION['staff']){
 									echo ' <tr>
 								<th>Emp. ID</th>
 								<th>Name</th>
 								<th>Department</th>
-								
+
 							</tr>';
 								while($row = mysqli_fetch_array($result2)){
 								$empID = $row['emp_id'];
@@ -115,7 +119,7 @@
 									<a href="member_edit.php?employeeID='.$empID.'">Edit</a>&#160;&#160;&#160;&#160;<a href="search_hr.php" id="delete" del_id="'.$empID.'">Delete</a></li>
 								</td>
 								</tr>';
-							}	
+							}
 								$_SESSION['staff'] = false;
 								}
 							?>
@@ -149,7 +153,7 @@
 			method  : "POST",
 			data  : {delete:1,d:remove_id},
 			success : function(data){
-				
+
 				$(".colorlib-work").html(data);
 			}
 		})
