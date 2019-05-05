@@ -65,13 +65,6 @@ figure {
   transition: 0.5s; 
 }
 
-  @media screen and (max-width: 1200px) {
-    #colorlib-aside {
-      width: 30%; } }
-  @media screen and (max-width: 768px) {
-    #colorlib-aside {
-      width: 270px;
-      padding-top: 4em; } }
   #colorlib-aside #colorlib-logo {
     text-align: right;
     font-weight: 400;
@@ -80,9 +73,7 @@ figure {
     margin-bottom: 3em;
     display: block;
     width: 100%; }
-    @media screen and (max-width: 768px) {
-      #colorlib-aside #colorlib-logo {
-        margin-bottom: 1em; } }
+
     #colorlib-aside #colorlib-logo a {
       display: inline-block;
       text-align: center;
@@ -99,9 +90,7 @@ figure {
     text-align: right;
     margin: 0;
     padding: 0; }
-    @media screen and (max-width: 768px) {
-      #colorlib-aside #colorlib-main-menu ul {
-        margin: 0 0 2em 0; } }
+
     #colorlib-aside #colorlib-main-menu ul li {
       margin: 0 0 10px 0;
       padding: 0;
@@ -146,11 +135,7 @@ figure {
     text-align: right;
     font-weight: 400;
     color: rgba(0, 0, 0, 0.6);
-    padding: 0 20px; }
-    @media screen and (max-width: 768px) {
-      #colorlib-aside .colorlib-footer {
-        position: relative;
-        bottom: 0; } }
+    padding: 0 20px; } 
     #colorlib-aside .colorlib-footer span {
       display: block; }
     #colorlib-aside .colorlib-footer ul {
@@ -173,12 +158,6 @@ figure {
   width: 80%;
   float: right;
   transition: 0.5s; }
-  @media screen and (max-width: 1200px) {
-    #colorlib-main {
-      width: 70%; } }
-  @media screen and (max-width: 768px) {
-    #colorlib-main {
-      width: 100%; } }
 
 #colorlib-hero {
   min-height: 500px;
@@ -240,9 +219,7 @@ figure {
           left: 0;
           padding: 30px;
           background: #fff; }
-        @media screen and (max-width: 768px) {
-          #colorlib-hero .flexslider .slider-text > .slider-text-inner {
-            text-align: center; } }
+
         #colorlib-hero .flexslider .slider-text > .slider-text-inner h1, #colorlib-hero .flexslider .slider-text > .slider-text-inner h2 {
           margin: 0;
           padding: 0;
@@ -253,9 +230,7 @@ figure {
           font-size: 44px;
           line-height: 1.3;
           font-weight: 300; }
-          @media screen and (max-width: 768px) {
-            #colorlib-hero .flexslider .slider-text > .slider-text-inner h1 {
-              font-size: 28px; } }
+
         #colorlib-hero .flexslider .slider-text > .slider-text-inner h2 {
           font-size: 18px;
           line-height: 1.5;
@@ -267,9 +242,7 @@ figure {
             border-bottom: 1px solid rgba(247, 89, 64, 0.7); }
         #colorlib-hero .flexslider .slider-text > .slider-text-inner .heading-section {
           font-size: 50px; }
-          @media screen and (max-width: 768px) {
-            #colorlib-hero .flexslider .slider-text > .slider-text-inner .heading-section {
-              font-size: 30px; } }
+
         #colorlib-hero .flexslider .slider-text > .slider-text-inner s
 .colorlib-lead {
           font-size: 20px;
@@ -291,9 +264,6 @@ figure {
             #colorlib-hero .flexslider .slider-text > .slider-text-inner .btn.btn-learn:hover {
               background: transparent !important;
               border: 1px solid #000 !important; }
-          @media screen and (max-width: 768px) {
-            #colorlib-hero .flexslider .slider-text > .slider-text-inner .btn {
-              width: 100%; } }
 
 body.offcanvas {
   overflow-x: hidden; }
@@ -316,14 +286,6 @@ body.offcanvas {
   clear: both;
   width: 100%;
   display: block; }
-  @media screen and (max-width: 768px) {
-    .colorlib-blog,
-    .colorlib-work,
-    .colorlib-about,
-    .colorlib-services,
-    .colorlib-contact {
-      padding-top: 5em;
-      padding-bottom: 8em; } }
 
 .about-img,
 .about-img-2 {
@@ -341,9 +303,6 @@ body.offcanvas {
   line-height: 1.8; }
   .colorlib-heading span {
     display: block; }
-  @media screen and (max-width: 768px) {
-    .colorlib-heading {
-      margin-bottom: 1em; } }
 
 .heading-meta {
   margin-bottom: 15px;
@@ -421,9 +380,7 @@ body.offcanvas {
   float: left;
   background: #fff;
   margin-bottom: 3em; }
-  @media screen and (max-width: 768px) {
-    .blog-entry {
-      margin-bottom: 3em; } }
+
   .blog-entry .blog-img {
     width: 100%;
     float: left;
@@ -464,9 +421,6 @@ body.offcanvas {
   margin-top: 5em;
   background: #fff;
   padding: 30px; }
-  @media screen and (max-width: 768px) {
-    .overlap {
-      margin-top: 2em; } }
 
 .project {
   background-size: cover;
@@ -526,16 +480,6 @@ body.offcanvas {
       transform: translate3d(0, 15px, 0); }
       .project .desc span a {
         color: #000; }
-    @media screen and (max-width: 768px) {
-      .project .desc {
-        opacity: 1;
-        background: #ffffff80; }
-        .project .desc h3 {
-          font-style: 28px;
-          transform: translate3d(0, 0, 0);
-          color: #000; }
-        .project .desc span {
-          transform: translate3d(0, 0, 0); } }
   .project:hover .desc {
     opacity: 1; }
     .project:hover .desc h3 {
@@ -599,9 +543,6 @@ body.offcanvas {
       zoom: 1;
       *display: inline;
       border-radius: 7px; }
-      @media screen and (max-width: 768px) {
-        .colorlib-social li a {
-          padding: 10px 8px; } }
       .colorlib-social li a:hover {
         color: #F75940; }
       .colorlib-social li a:hover, .colorlib-social li a:active, .colorlib-social li a:focus {
@@ -612,9 +553,6 @@ body.offcanvas {
 #map {
   width: 100%;
   height: 700px; }
-  @media screen and (max-width: 768px) {
-    #map {
-      height: 200px; } }
 
 .colorlib-more-contact {
   background: #fafafa;
@@ -642,9 +580,6 @@ body.offcanvas {
       color: #F75940;
       font-size: 40px;
       height: 100px; }
-      @media screen and (max-width: 1200px) {
-        .colorlib-feature .colorlib-icon i {
-          font-size: 40px; } }
   .colorlib-feature .colorlib-text {
     padding-left: 120px;
     width: 100%; }
@@ -663,9 +598,6 @@ body.offcanvas {
   .colorlib-feature.colorlib-feature-sm .colorlib-icon i {
     color: #F75940;
     font-size: 40px; }
-    @media screen and (max-width: 1200px) {
-      .colorlib-feature.colorlib-feature-sm .colorlib-icon i {
-        font-size: 28px; } }
 
 .colorlib-feature-lg .colorlib-text h2, .colorlib-feature-lg .colorlib-text h3 {
   margin: 0;
@@ -699,9 +631,6 @@ body.offcanvas {
         background: #F75940;
         color: #fff;
         border: 1px solid #F75940; }
-      @media screen and (max-width: 768px) {
-        .pagination li a {
-          padding: 7px 15px; } }
     .pagination li.active a {
       background: #F75940;
       border: 1px solid #F75940 !important; }
@@ -903,33 +832,15 @@ body.offcanvas {
   visibility: hidden;
   padding: 20px;
   transition: 0.5s; }
-  @media screen and (max-width: 768px) {
-    .colorlib-nav-toggle {
-      opacity: 1;
-      visibility: visible; } }
-
-@media screen and (max-width: 480px) {
-  .col-xxs-12 {
-    float: none;
-    width: 100%; } }
 
 .row-bottom-padded-lg {
   padding-bottom: 7em; }
-  @media screen and (max-width: 768px) {
-    .row-bottom-padded-lg {
-      padding-bottom: 1em; } }
 
 .row-bottom-padded-md {
   padding-bottom: 4em; }
-  @media screen and (max-width: 768px) {
-    .row-bottom-padded-md {
-      padding-bottom: 1em; } }
 
 .row-bottom-padded-sm {
   padding-bottom: 1em; }
-  @media screen and (max-width: 768px) {
-    .row-bottom-padded-sm {
-      padding-bottom: 1em; } }
 
 .col-padding {
   padding: 10px !important; }
@@ -942,13 +853,6 @@ body.offcanvas {
   transition: 0.3s; }
   #sticky_item.is_stuck {
     margin-top: 10px; }
-
-@media screen and (max-width: 992px) {
-  .sticky-parent {
-    clear: both;
-    height: inherit !important;
-    float: left;
-    padding-top: 30px; } }
 
 a {
     color: #69C;
@@ -972,12 +876,10 @@ p {
 input {
     outline: none;
 }
-
     input[type=search] {
         font-family: inherit;
         font-size: 80%;
     }
-
 
     input[type=search] {
         background: #ededed url(http://i.imm.io/Q0Jo.png) no-repeat 9px center;
