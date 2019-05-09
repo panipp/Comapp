@@ -10,6 +10,10 @@
 		if(empty( $_POST['staffsearchMng'])){
 			$_SESSION['staff'] = true;
 		}
+		if(!preg_match("/^[0-9]|[A-Z]|[a-z]$/",$_POST["staffsearchMng"]))	{
+				echo "<script language='javascript'> alert('No Match Found');window.location='search_hr.php';</script>";
+			exit();
+		}
 		else{
 			$mngstaff = $_POST['staffsearchMng'];
 			$searching = preg_replace("#[^0-9a-z]#i","",$mngstaff);
