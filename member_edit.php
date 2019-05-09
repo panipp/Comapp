@@ -81,7 +81,7 @@
                     <li><a href="about_hr.php">About</a></li>
                     <li><a href="news_hr.php">News</a></li>
                     <li><a href="search_hr.php">Search</a></li>
-					<li><a href="login.php">Logout</a></li>
+					<li><a href="login.php" style="color:red;">Logout</a></li>
                 </ul>
             </nav>
 
@@ -95,17 +95,6 @@
 					<div class="container-fluid">
 						<fieldset>
 							<legend>Edit Member Information</legend>
-							<div class="form-group">
-								<label class="col control-label" for="id">Employee ID</label>
-								<div class="col">
-									<div class="input-group">
-										<div class="input-group-addon">
-											<i class="fa fa-briefcase"></i>
-										</div>
-										<input id="id" name="id" type="text" placeholder="<?php echo $empID;?>" value="<?php echo $empID;?>"class="form-control input-md">
-									</div>
-								</div>
-							</div>
 								<div class="form-group">
 									<label class="col control-label" for="Firstname">Firstname</label>
 									<div class="col">
@@ -153,23 +142,6 @@
 									<label class="radio-inline" for="Gender-1">
 										<input type="radio" name="Gender" id="Gender-1" value="Female">
 										Female
-									</label>
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col control-label" for="dep">Department</label>
-								<div class="col">
-									<label class="radio-inline" for="d-0">
-										<input type="radio" name="dep" id="d-0" value="Normal" checked="checked">
-										Normal
-									</label>
-									<label class="radio-inline" for="d-1">
-										<input type="radio" name="dep" id="d-1" value="HR">
-										HR
-									</label>
-									<label class="radio-inline" for="d-0">
-										<input type="radio" name="dep" id="d-0" value="Manager">
-										Manager
 									</label>
 								</div>
 							</div>

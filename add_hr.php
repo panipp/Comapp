@@ -30,7 +30,7 @@
                     <li><a href="about_hr.php">About</a></li>
                     <li><a href="news_hr.php">News</a></li>
                     <li><a href="search_hr.php">Search</a></li>
-					<li><a href="login.php">Logout</a></li>
+					<li><a href="login.php" style="color:red;">Logout</a></li>
                 </ul>
             </nav>
 
@@ -188,7 +188,7 @@
 							<div class="form-group">
 								<label class="col control-label" for="Address">Address</label>
 								<div class="col">
-									<textarea class="form-control" rows="10" id="Address" name="Address" placeholder="Address (max 200 words)"></textarea>
+									<textarea class="form-control" rows="10" id="Address" name="Address" placeholder="Address (max 200 words)" maxlength=200></textarea>
 								</div>
 							</div>
 							<div class="form-group">
