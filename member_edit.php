@@ -121,7 +121,7 @@
 							<div class="form-group">
 								<label class="col control-label" for="Gender">Gender</label>
 								<div class="col">
-								<?php if($status == 'Male'){echo '<label class="radio-inline" for="Gender-0">
+								<?php if($gender == 'Male'){echo '<label class="radio-inline" for="Gender-0">
 										<input type="radio" name="Gender" id="Gender-0" value="Male" checked="checked">
 										Male
 									</label>
