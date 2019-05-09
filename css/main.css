@@ -1,42 +1,32 @@
 @font-face {
   font-family: Ubuntu-Regular;
-  src: url('../fonts/ubuntu/Ubuntu-Regular.ttf'); 
-}
+  src: url('../fonts/ubuntu/Ubuntu-Regular.ttf'); }
 
 @font-face {
   font-family: Ubuntu-Bold;
-  src: url('../fonts/ubuntu/Ubuntu-Bold.ttf'); 
-}
+  src: url('../fonts/ubuntu/Ubuntu-Bold.ttf'); }
 
 * {
 	margin: 0px; 
 	padding: 0px; 
-	box-sizing: border-box;
-}
+	box-sizing: border-box; }
 
 input {
 	outline: none;
-	border: none;
-}
-
+	border: none; }
 input:focus {
-  border-color: transparent !important;
-}
+  border-color: transparent !important; }
 
 button {
 	outline: none !important;
 	border: none;
-	background: transparent;
-}
-
+	background: transparent; }
 button:hover {
-	cursor: pointer;
-}
+	cursor: pointer; }
 
 .limiter {
   width: 100%;
-  margin: 0 auto;
-}
+  margin: 0 auto; }
 
 .container-login100 {
   width: 100%;  
@@ -50,9 +40,7 @@ button:hover {
   background-position: center;
   background-size: cover;
   position: relative;
-  z-index: 1;  
-}
-
+  z-index: 1; }
 .container-login100::before {
   content: "";
   display: block;
@@ -62,8 +50,7 @@ button:hover {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(0,0,0,0.65);
-}
+  background-color: rgba(0,0,0,0.65); }
 
 .wrap-login100 {
   width: 390px;
@@ -71,16 +58,14 @@ button:hover {
   overflow: hidden;
   padding-top: 30px;
   padding-bottom: 50px;
-  background: transparent;
-}
+  background: transparent; }
 
 .login100-form {
   width: 100%;
   border-radius: 10px;
   background-color: #fff;
   padding-top: 5px;
-  padding-bottom: 33px;
-}
+  padding-bottom: 33px; }
 
 .login100-form-title {
   font-family: Ubuntu-Bold;
@@ -90,15 +75,13 @@ button:hover {
   text-align: center;
   text-transform: uppercase;
   padding-bottom: 41px;
-  display: block;
-}
+  display: block; }
 
 .wrap-input100 {
   width: 100%;
   position: relative;
   border-bottom: 1px solid #e6e6e6;
-  padding: 29px 0;
-}
+  padding: 29px 0; }
 
 .input100 {
   font-family: Ubuntu-Regular;
@@ -110,8 +93,14 @@ button:hover {
   height: 50px;
   background: transparent;
   padding: 0 10px 0 80px;
-  transition: all 0.4s;
-}
+  transition: all 0.4s; }
+.input100:focus {
+  padding-left: 60px; }
+.input100:focus + .focus-input100::after {
+  left: 23px;
+  color: #053f56; }
+.input100:focus + .focus-input100::before {
+  width: 100%; }
 
 .focus-input100 {
   position: absolute;
@@ -120,9 +109,7 @@ button:hover {
   height: 100%;
   top: 0;
   left: 0;
-  pointer-events: none;
-}
-
+  pointer-events: none; }
 .focus-input100::before {
   content: "";
   display: block;
@@ -132,9 +119,7 @@ button:hover {
   width: 0;
   height: 1px;
   transition: all 0.4s;
-  background: #243047;
-}
-
+  background: #243047; }
 .focus-input100::after {
   font-family: Linearicons-Free;
   font-size: 18px;
@@ -145,29 +130,14 @@ button:hover {
   position: absolute;
   top: 40px;
   left: 35px;
-  transition: all 0.4s;
-}
-
-.input100:focus {
-  padding-left: 60px;
-}
-
-.input100:focus + .focus-input100::after {
-  left: 23px;
-  color: #053f56;
-}
-
-.input100:focus + .focus-input100::before {
-  width: 100%;
-}
+  transition: all 0.4s; }
 
 .container-login100-form-btn {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 32px;
-}
+  margin-top: 32px; }
 
 .login100-form-btn {
   font-family: Ubuntu-Bold;
@@ -183,15 +153,10 @@ button:hover {
   height: 42px;
   border-radius: 21px;
   background: #053f56;
-  background: -webkit-linear-gradient(left, #053f56, #053f56, #053f56);
-  background: -o-linear-gradient(left, #053f56, #053f56, #053f56);
-  background: -moz-linear-gradient(left, #053f56, #053f56, #053f56);
   background: linear-gradient(left, #053f56, #053f56, #053f56);
   position: relative;
   z-index: 1;
-  transition: all 0.4s;
-}
-
+  transition: all 0.4s; }
 .login100-form-btn::before {
   content: "";
   display: block;
@@ -204,13 +169,8 @@ button:hover {
   top: 0;
   left: 0;
   opacity: 0;
-  transition: all 0.4s;
-}
-
+  transition: all 0.4s; }
 .login100-form-btn:hover {
-  background-color: transparent;
-}
-
+  background-color: transparent; }
 .login100-form-btn:hover:before {
-  opacity: 1;
-}
+  opacity: 1; }

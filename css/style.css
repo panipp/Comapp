@@ -235,3 +235,9 @@ textarea{
 .colorlib-nav-toggle.active i::after {
   bottom: 0;
   transform: rotateZ(-45deg); }
+
+.row{
+  width: 80%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
