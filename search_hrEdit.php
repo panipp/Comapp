@@ -3,6 +3,7 @@
 
 	if (!$_SESSION['hr_loggedin']){
 		echo "<script language='javascript'> alert('กรุณาเข้าสู่ระบบก่อน');window.location='login.php';</script>";
+		exit;
 }
 	$_SESSION['staff'] = true;
 	$searching = preg_replace("#[^0-9a-z]#i","",$_GET['input']);
@@ -27,7 +28,7 @@
 				$_SESSION['staff'] = true;
 			}
 		}
-		
+
 	}
 
 	if(isset($_POST['delete'])){
@@ -63,7 +64,11 @@
                     <li><a href="about_hr.php">About</a></li>
                     <li><a href="news_hr.php">News</a></li>
                     <li><a href="search_hr.php">Search</a></li>
+<<<<<<< HEAD
 					<li><a href="login.php" style="color:red;">Logout</a></li>
+=======
+										<li><a href="logout.php">Logout</a></li>
+>>>>>>> ef70d01d330bf6be23e663267de753f3e02eef48
                 </ul>
             </nav>
         </aside>
