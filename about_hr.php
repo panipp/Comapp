@@ -1,9 +1,8 @@
 <?php
 	include 'connect.php';
-
 	if (!$_SESSION['hr_loggedin']){
 		echo "<script language='javascript'> alert('กรุณาเข้าสู่ระบบก่อน');window.location='login.php';</script>";
-		exit
+		exit;
 }
 $empID = $_SESSION["loginHR"];
 $sql = "SELECT* FROM employee WHERE emp_id = '$empID'";
