@@ -1,5 +1,6 @@
-<?php include 'connect.php';
-	session_start();
+<?php
+ 	include 'connect.php';
+
 		if (!$_SESSION['hr_loggedin']){
 			echo "<script language='javascript'> alert('กรุณาเข้าสู่ระบบก่อน');window.location='login.php';</script>";
 	}
