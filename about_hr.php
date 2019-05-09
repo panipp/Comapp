@@ -1,9 +1,25 @@
 <?php
 	include 'connect.php';
-
 	if (!$_SESSION['hr_loggedin']){
 		echo "<script language='javascript'> alert('กรุณาเข้าสู่ระบบก่อน');window.location='login.php';</script>";
-		exit
+		exit;
+}
+$empID = $_SESSION["loginHR"];
+$sql = "SELECT* FROM employee WHERE emp_id = '$empID'";
+$result = mysqli_query($db,$sql);
+if($row = mysqli_fetch_assoc($result)){
+    $eID = $row['emp_id'];
+    $cID = $row['citizenID'];
+    $firstname = $row['firstname'];
+    $lastname = $row['lastname'];
+    $gender = $row['gender'];
+    $dob = $row['birthday'];
+    $status = $row['maritalstatus'];
+    $graduate = $row['graduate'];
+    $phone = $row['phonenumber'];
+    $email = $row['email'];
+    $address = $row['address'];
+    $area = $row['workingarea'];
 }
 ?>
 
@@ -31,7 +47,7 @@
                     <li><a href="about_hr.php">About</a></li>
                     <li><a href="news_hr.php">News</a></li>
                     <li><a href="search_hr.php">Search</a></li>
-                    <li><a href="logout.php">Logout</a></li>
+                    <li><a href="logout.php" style="color:red;">Logout</a></li>
                 </ul>
             </nav>
             <div class="colorlib-footer">
@@ -50,7 +66,7 @@
                                     <div class="input-group-addon">
                                         <i class="fa fa-briefcase"></i>
                                     </div>
-                                    <input id="id" name="id" type="text" placeholder="<?php echo''.$_SESSION["loginHR"].'';?>" class="form-control input-md" disabled>
+                                    <input id="id" name="id" type="text" placeholder="<?php echo $eID;?>" class="form-control input-md" disabled>
                                 </div>
                             </div>
                         </div>
@@ -62,7 +78,7 @@
                                         <i class="fa fa-user">
                                         </i>
                                     </div>
-                                    <input id="Firstname" name="Firstname" type="text" placeholder="<?php echo''.$_SESSION["hrFirstname"].'';?>" class="form-control input-md" disabled>
+                                    <input id="Firstname" name="Firstname" type="text" placeholder="<?php echo $firstname;?>" class="form-control input-md" disabled>
                                 </div>
                             </div>
                         </div>
@@ -74,7 +90,7 @@
                                         <i class="fa fa-user">
                                         </i>
                                     </div>
-                                    <input id="Lastname" name="Lastname" type="text" placeholder="<?php echo''.$_SESSION["hrLastname"].'';?>" class="form-control input-md" disabled>
+                                    <input id="Lastname" name="Lastname" type="text" placeholder="<?php echo $lastname;?>" class="form-control input-md" disabled>
                                 </div>
                             </div>
                         </div>
@@ -85,13 +101,13 @@
                                     <div class="input-group-addon">
                                         <i class="fa fa-sticky-note-o"></i>
                                     </div>
-                                    <input id="Citizen" name="Citizen" type="text" placeholder="<?php echo''.$_SESSION['hrCitizenID'].'';?>" class="form-control input-md" disabled>
+                                    <input id="Citizen" name="Citizen" type="text" placeholder="<?php echo $cID;?>"  class="form-control input-md" disabled>
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="col control-label" for="Gender">Gender: <?php echo''.$_SESSION['hrGender'].'';?></label>
+                            <label class="col control-label" for="Gender">Gender: <?php echo $gender;?></label>
 
                         </div>
                         <div class="form-group">
@@ -105,14 +121,14 @@
                                     <div class="input-group-addon">
                                         <i class="fa fa-birthday-cake"></i>
                                     </div>
-                                    <input id="Date Of Birth" name="Date Of Birth" type="text" placeholder="<?php echo''.$_SESSION["hrDob"].'';?>" class="form-control input-md" disabled>
+                                    <input id="Date Of Birth" name="Date Of Birth" type="text" placeholder="<?php echo $dob;?>" class="form-control input-md" disabled>
                                 </div>
                             </div>
                         </div>
 
 
                         <div class="form-group">
-                            <label class="col control-label" for="radios">Marital Status: <?php echo''.$_SESSION['hrStatus'].'';?></label>
+                            <label class="col control-label" for="radios">Marital Status:<?php echo $status;?></label>
 
                         </div>
 
@@ -123,7 +139,7 @@
                                     <div class="input-group-addon">
                                         <i class="fa fa-graduation-cap"></i>
                                     </div>
-                                    <input id="grad" name="grad" type="text" placeholder="<?php echo''.$_SESSION['hrGraduate'].'';?>" class="form-control input-md" disabled>
+                                    <input id="grad" name="grad" type="text" placeholder="<?php echo $graduate;?>" class="form-control input-md" disabled>
                                 </div>
                             </div>
                         </div>
@@ -135,7 +151,7 @@
                                     <div class="input-group-addon">
                                         <i class="fa fa-phone"></i>
                                     </div>
-                                    <input id="Phone number " name="Phone number " type="text" placeholder="<?php echo''.$_SESSION['hrPhone'].'';?>" class="form-control input-md" disabled>
+                                    <input id="Phone number " name="Phone number " type="text" placeholder="<?php echo $phone;?>" class="form-control input-md" disabled>
                                 </div>
                             </div>
                         </div>
@@ -147,21 +163,20 @@
                                     <div class="input-group-addon">
                                         <i class="fa fa-envelope-o"></i>
                                     </div>
-                                    <input id="Email Address" name="Email Address" type="text" placeholder="<?php echo''.$_SESSION['hrEmail'].'';?>" class="form-control input-md" disabled>
+                                    <input id="Email Address" name="Email Address" type="text" placeholder="<?php echo $email;?>" class="form-control input-md" disabled>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col control-label" for="Address">Address</label>
                             <div class="col">
-                                <textarea class="form-control" rows="10" id="Address" name="Address" disabled><?php echo''.$_SESSION['hrAddress'].'';?></textarea>
+                                <textarea class="form-control" rows="10" id="Address" name="Address" disabled><?php echo $address;?></textarea>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col control-label" for="area">Working area: <?php echo''.$_SESSION['hrArea'].'';?></label>
+                            <label class="col control-label" for="area">Working area: <?php echo $area;?></label>
 
                         </div>
-                        <!--ข้อมูลญาติ-->
 
                     </fieldset>
                 </div>

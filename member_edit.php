@@ -24,7 +24,6 @@
 		$area = $row['workingarea'];
 	}
 	if(isset($_POST['update'])){
-		$eID = $_POST['id'];
 		$cID = $_POST['Citizen'];
 		$firstname = $_POST['Firstname'];
 		$lastname = $_POST['Lastname'];
@@ -36,25 +35,11 @@
 		$email = $_POST['email'];
 		$address = $_POST['Address'];
 		$area = $_POST['area'];
-		$department = $_POST['dep'];
 
-		$sql = "UPDATE employee SET emp_id='$eID',citizenID='$cID',firstname ='$firstname',lastname ='$lastname',
+		$sql = "UPDATE employee SET citizenID='$cID',firstname ='$firstname',lastname ='$lastname',
 		gender='$gender',birthday='$dob',maritalstatus='$status',graduate='$graduate',phonenumber='$phone',email='$email',
-		address='$address',workingarea='$area'
-		WHERE emp_id ='$empID'";
+		address='$address',workingarea='$area' WHERE emp_id ='$empID'";
 		mysqli_query($db,$sql);
-		if($department=="Normal"){
-			$sqlDep = "UPDATE staff SET dep_id = '20000',emp_id='eID' WHERE emp_id ='$empID'";
-			mysqli_query($db,$sqlDep);
-		}
-		if($department=="HR"){
-			$sqlDep = "UPDATE hr SET dep_id = '10000',emp_id='eID' WHERE emp_id ='$empID'";
-			mysqli_query($db,$sqlDep);
-		}
-		if($department=="Manager"){
-			$sqlDep = "UPDATE manager SET dep_id = '30000',emp_id='eID' WHERE emp_id ='$empID'";
-			mysqli_query($db,$sqlDep);
-		}
 		echo '<script>alert("Success")</script>';
 	}
 ?>
@@ -82,7 +67,7 @@
                     <li><a href="about_hr.php">About</a></li>
                     <li><a href="news_hr.php">News</a></li>
                     <li><a href="search_hr.php">Search</a></li>
-					          <li><a href="logout.php">Logout</a></li>
+					<li><a href="logout.php" style="color:red;">Logout</a></li>
                 </ul>
             </nav>
 
@@ -96,17 +81,6 @@
 					<div class="container-fluid">
 						<fieldset>
 							<legend>Edit Member Information</legend>
-							<div class="form-group">
-								<label class="col control-label" for="id">Employee ID</label>
-								<div class="col">
-									<div class="input-group">
-										<div class="input-group-addon">
-											<i class="fa fa-briefcase"></i>
-										</div>
-										<input id="id" name="id" type="text" placeholder="<?php echo $empID;?>" value="<?php echo $empID;?>"class="form-control input-md">
-									</div>
-								</div>
-							</div>
 								<div class="form-group">
 									<label class="col control-label" for="Firstname">Firstname</label>
 									<div class="col">
@@ -147,31 +121,22 @@
 							<div class="form-group">
 								<label class="col control-label" for="Gender">Gender</label>
 								<div class="col">
-									<label class="radio-inline" for="Gender-0">
+								<?php if($gender == 'Male'){echo '<label class="radio-inline" for="Gender-0">
 										<input type="radio" name="Gender" id="Gender-0" value="Male" checked="checked">
 										Male
 									</label>
 									<label class="radio-inline" for="Gender-1">
 										<input type="radio" name="Gender" id="Gender-1" value="Female">
 										Female
+									</label>';}else{echo '<label class="radio-inline" for="Gender-0">
+										<input type="radio" name="Gender" id="Gender-0" value="Male">
+										Male
 									</label>
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col control-label" for="dep">Department</label>
-								<div class="col">
-									<label class="radio-inline" for="d-0">
-										<input type="radio" name="dep" id="d-0" value="Normal" checked="checked">
-										Normal
-									</label>
-									<label class="radio-inline" for="d-1">
-										<input type="radio" name="dep" id="d-1" value="HR">
-										HR
-									</label>
-									<label class="radio-inline" for="d-0">
-										<input type="radio" name="dep" id="d-0" value="Manager">
-										Manager
-									</label>
+									<label class="radio-inline" for="Gender-1">
+										<input type="radio" name="Gender" id="Gender-1" value="Female" checked="checked">
+										Female
+									</label>';} ?>
+									
 								</div>
 							</div>
 							<div class="form-group">
@@ -190,14 +155,22 @@
 							<div class="form-group">
 								<label class="col control-label" for="radios">Marital Status:</label>
 								<div class="col">
-									<label class="radio-inline" for="radios-0">
+									<?php if($status == 'Married'){echo '<label class="radio-inline" for="radios-0">
 										<input type="radio" name="radios" id="radios-0" value="Married" checked="checked">
 										Married
-									</label>
-									<label class="radio-inline" for="radios-1">
-										<input type="radio" name="radios" id="radios-1" value="Unmarried">
-										Unmarried
-									</label>
+										</label>
+										<label class="radio-inline" for="radios-1">
+											<input type="radio" name="radios" id="radios-1" value="Unmarried">
+											Unmarried
+										</label>';}else{echo '<label class="radio-inline" for="radios-0">
+											<input type="radio" name="radios" id="radios-0" value="Married" >
+											Married
+										</label>
+										<label class="radio-inline" for="radios-1">
+											<input type="radio" name="radios" id="radios-1" value="Unmarried" checked="checked">
+											Unmarried
+										</label>';} ?>
+
 								</div>
 							</div>
 
@@ -245,7 +218,7 @@
 							<div class="form-group">
 								<label class="col control-label" for="area">Working area</label>
 								<div class="col">
-									<label class="radio-inline" for="area-0">
+								<?php if($area == 'Central'){echo '	<label class="radio-inline" for="area-0">
 										<input type="radio" name="area" id="area-0" value="Central" checked="checked">
 										Central
 									</label>
@@ -268,7 +241,123 @@
 									<label class="radio-inline" for="area-5">
 										<input type="radio" name="area" id="area-5" value="Western">
 										Western
+									</label>';} elseif($area == 'Northern'){echo '<label class="radio-inline" for="area-0">
+										<input type="radio" name="area" id="area-0" value="Central" >
+										Central
 									</label>
+									<label class="radio-inline" for="area-1">
+										<input type="radio" name="area" id="area-1" value="Northern" checked="checked">
+										Northern
+									</label>
+									<label class="radio-inline" for="area-2">
+										<input type="radio" name="area" id="area-2" value="Northeastern">
+										Northeastern
+									</label>
+									<label class="radio-inline" for="area-3">
+										<input type="radio" name="area" id="area-3" value="Southern">
+										Southern
+									</label>
+									<label class="radio-inline" for="area-4">
+										<input type="radio" name="area" id="area-4" value="Eastern">
+										Eastern
+									</label>
+									<label class="radio-inline" for="area-5">
+										<input type="radio" name="area" id="area-5" value="Western">
+										Western
+									</label>';}elseif($area == 'Northeastern'){echo '<label class="radio-inline" for="area-0">
+										<input type="radio" name="area" id="area-0" value="Central">
+										Central
+									</label>
+									<label class="radio-inline" for="area-1">
+										<input type="radio" name="area" id="area-1" value="Northern">
+										Northern
+									</label>
+									<label class="radio-inline" for="area-2">
+										<input type="radio" name="area" id="area-2" value="Northeastern" checked="checked">
+										Northeastern
+									</label>
+									<label class="radio-inline" for="area-3">
+										<input type="radio" name="area" id="area-3" value="Southern">
+										Southern
+									</label>
+									<label class="radio-inline" for="area-4">
+										<input type="radio" name="area" id="area-4" value="Eastern">
+										Eastern
+									</label>
+									<label class="radio-inline" for="area-5">
+										<input type="radio" name="area" id="area-5" value="Western">
+										Western
+									</label>';}elseif($area == 'Southern'){echo '<label class="radio-inline" for="area-0">
+										<input type="radio" name="area" id="area-0" value="Central">
+										Central
+									</label>
+									<label class="radio-inline" for="area-1">
+										<input type="radio" name="area" id="area-1" value="Northern">
+										Northern
+									</label>
+									<label class="radio-inline" for="area-2">
+										<input type="radio" name="area" id="area-2" value="Northeastern">
+										Northeastern
+									</label>
+									<label class="radio-inline" for="area-3">
+										<input type="radio" name="area" id="area-3" value="Southern" checked="checked">
+										Southern
+									</label>
+									<label class="radio-inline" for="area-4">
+										<input type="radio" name="area" id="area-4" value="Eastern">
+										Eastern
+									</label>
+									<label class="radio-inline" for="area-5">
+										<input type="radio" name="area" id="area-5" value="Western">
+										Western
+									</label>';}elseif($area == 'Eastern'){echo '<label class="radio-inline" for="area-0">
+										<input type="radio" name="area" id="area-0" value="Central">
+										Central
+									</label>
+									<label class="radio-inline" for="area-1">
+										<input type="radio" name="area" id="area-1" value="Northern">
+										Northern
+									</label>
+									<label class="radio-inline" for="area-2">
+										<input type="radio" name="area" id="area-2" value="Northeastern">
+										Northeastern
+									</label>
+									<label class="radio-inline" for="area-3">
+										<input type="radio" name="area" id="area-3" value="Southern">
+										Southern
+									</label>
+									<label class="radio-inline" for="area-4">
+										<input type="radio" name="area" id="area-4" value="Eastern" checked="checked">
+										Eastern
+									</label>
+									<label class="radio-inline" for="area-5">
+										<input type="radio" name="area" id="area-5" value="Western">
+										Western
+									</label>';}else{echo '<label class="radio-inline" for="area-0">
+										<input type="radio" name="area" id="area-0" value="Central">
+										Central
+									</label>
+									<label class="radio-inline" for="area-1">
+										<input type="radio" name="area" id="area-1" value="Northern">
+										Northern
+									</label>
+									<label class="radio-inline" for="area-2">
+										<input type="radio" name="area" id="area-2" value="Northeastern">
+										Northeastern
+									</label>
+									<label class="radio-inline" for="area-3">
+										<input type="radio" name="area" id="area-3" value="Southern">
+										Southern
+									</label>
+									<label class="radio-inline" for="area-4">
+										<input type="radio" name="area" id="area-4" value="Eastern">
+										Eastern
+									</label>
+									<label class="radio-inline" for="area-5">
+										<input type="radio" name="area" id="area-5" value="Western"> checked="checked"
+										Western
+									</label>';} ?>
+
 								</div>
 							</div>
 
