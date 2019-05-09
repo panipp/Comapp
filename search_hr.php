@@ -3,6 +3,7 @@
 
 	if (!$_SESSION['hr_loggedin']){
 		echo "<script language='javascript'> alert('กรุณาเข้าสู่ระบบก่อน');window.location='login.php';</script>";
+		exit;
 }
 	$_SESSION['staff'] = false;
 	if(isset($_POST['staffsearchMng'])){
@@ -22,7 +23,7 @@
 				header("Location: search_hrEdit.php?input=".$mngstaff."");
 				$_SESSION['staff'] = true;
 			}
-		}	
+		}
 	}
 ?>
 
@@ -49,7 +50,7 @@
                     <li><a href="about_hr.php">About</a></li>
                     <li><a href="news_hr.php">News</a></li>
                     <li><a href="search_hr.php">Search</a></li>
-					<li><a href="login.php">Logout</a></li>
+										<li><a href="logout.php">Logout</a></li>
                 </ul>
             </nav>
         </aside>
