@@ -70,10 +70,6 @@
 					<li><a href="logout.php" style="color:red;">Logout</a></li>
                 </ul>
             </nav>
-
-            <div class="colorlib-footer">
-            </div>
-
         </aside>
         <div id="colorlib-main">
             <div class="colorlib-work">

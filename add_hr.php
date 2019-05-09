@@ -35,9 +35,6 @@
                 </ul>
             </nav>
 
-            <div class="colorlib-footer">
-            </div>
-
         </aside>
         <div id="colorlib-main">
             <div class="colorlib-work">

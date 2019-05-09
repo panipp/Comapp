@@ -56,7 +56,6 @@ $searching = "Search";
                 </ul>
             </nav>
         </aside>
-
         </div>
 
 	<div id="colorlib-main">
