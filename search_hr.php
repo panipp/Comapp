@@ -5,11 +5,9 @@
 		echo "<script language='javascript'> alert('กรุณาเข้าสู่ระบบก่อน');window.location='login.php';</script>";
 		exit;
 }
+$searching = "Search";
 	$_SESSION['staff'] = false;
 	if(isset($_POST['staffsearchMng'])){
-		if(empty( $_POST['staffsearchMng'])){
-			$_SESSION['staff'] = true;
-		}
 		if(!preg_match("/^[0-9]|[A-Z]|[a-z]$/",$_POST["staffsearchMng"]))	{
 				echo "<script language='javascript'> alert('No Match Found');window.location='search_hr.php';</script>";
 			exit();
@@ -67,7 +65,7 @@
 				<center>
 					<h1> Search </h1>
 					<form method="POST" name="searchMng" id="go">
-					<input id="ssMng" name="staffsearchMng" type="search" placeholder="Staff">
+					<input id="ssMng" name="staffsearchMng" type="search" placeholder="<?php echo $searching;?>">
 					</form>
 				</center>
 			</div>

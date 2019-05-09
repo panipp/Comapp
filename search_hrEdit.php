@@ -10,10 +10,6 @@
 	$query2 = "SELECT * FROM employee WHERE emp_id LIKE '%$searching%' OR firstname LIKE '%$searching%' OR lastname LIKE '%$searching%'";
 	$result2 = mysqli_query($db,$query2);
 	if(isset($_POST['staffsearchHR'])){
-		if(empty( $_POST['staffsearchHR'])){
-			echo '<script>alert("No Match Found");</script>';
-			$_SESSION['staff'] = true;
-		}
 		if(!preg_match("/^[0-9]|[A-Z]|[a-z]$/",$_POST["staffsearchHR"]))	{
 				echo "<script language='javascript'> alert('No Match Found');window.location='search_hr.php';</script>";
 			exit();
@@ -79,7 +75,7 @@
 				<div class="row">
 					<center>
 						<h1> Search </h1>
-						<input id="ssHR" name="staffsearchHR" type="search" placeholder="Staff">
+						<input id="ssHR" name="staffsearchHR" type="search" placeholder="<?php echo	$searching;?>">
 					</center>
 					<br />
 					<table class="table striped">
