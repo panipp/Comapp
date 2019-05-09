@@ -14,6 +14,10 @@
 			echo '<script>alert("No Match Found");</script>';
 			$_SESSION['staff'] = true;
 		}
+		if(!preg_match("/^[0-9]|[A-Z]|[a-z]$/",$_POST["staffsearchHR"]))	{
+				echo "<script language='javascript'> alert('No Match Found');window.location='search_hr.php';</script>";
+			exit();
+		}
 		else{
 			$mngstaff = $_POST['staffsearchHR'];
 			$searching = preg_replace("#[^0-9a-z]#i","",$mngstaff);
