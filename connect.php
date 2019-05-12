@@ -77,14 +77,6 @@
 					echo "<script language='javascript'> alert('Please input your Phonenumber 10 number!');window.location='add_hr.php';</script>";
 					exit();
 			}
-			if(trim($_POST["Email"]) == ""){
-					echo "<script language='javascript'> alert('Please input your Email!');window.location='add_hr.php';</script>";
-					exit();
-			}
-			if(trim($_POST["Address"]) == ""){
-					echo "<script language='javascript'> alert('Please input your Address!');window.location='add_hr.php';</script>";
-					exit();
-			}
 			$empID = $_POST['empID'];
 			$firstname = $_POST['Firstname'];
 			$lastname = $_POST['Lastname'];

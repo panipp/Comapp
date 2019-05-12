@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 05, 2019 at 11:19 AM
+-- Generation Time: May 12, 2019 at 01:09 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.4
 
@@ -48,11 +48,11 @@ CREATE TABLE `employee` (
 --
 
 INSERT INTO `employee` (`emp_id`, `citizenID`, `email`, `graduate`, `firstname`, `lastname`, `birthday`, `gender`, `address`, `phonenumber`, `maritalstatus`, `workingarea`) VALUES
-('10001', '3159800063209', 'attitaya_ibeeaam@gmail.com', 'Thamasat', 'Atittaya', 'Junsoi', '1998-03-29', 'Male', '', '0944936661', 'Married', 'Central'),
-('10002', '1234567890123', '', 'TU', 'baewjai', 'pinkblossom', '1998-01-04', 'Male', '', '', 'Unmarried', 'Northern'),
+('10001', '3159800063209', 'attitaya_ibeeaam@gmail.com', 'Thamasat', 'Atittaya', 'Junsoi', '1998-03-29', 'Female', '', '0944936661', 'Unmarried', 'Southern'),
+('10002', '1234567890123', '', 'TU', 'baewjais', 'pinkblossom', '1998-01-04', 'Female', '', '', 'Unmarried', 'Eastern'),
 ('20001', '1159900258964', 'kittiphong_1995@hotmail.com', '', 'Kittiphong', 'Jittum', '1995-07-15', 'Male', '', '0898079946', 'Married', 'Central'),
-('20002', '1103702596795', '', 'TU', 'pani', 'pnsr', '1998-05-26', 'Male', '', '', 'Married', 'Central'),
-('30001', '1124900842129', 'trm_gust@gmail.com', '', 'Thiramate', 'Akkarachairin', '1990-04-02', 'Male', '13/1 หมู่ 2 ถนนกิ่งแก้ว ตำบลราชาเทวะ อำเภอบางพลี', '0856773797', 'Married', 'Central');
+('20002', '1103702596795', '', 'TU', 'pani', 'pnsr', '1998-05-26', 'Female', '', '', 'Unmarried', 'Western'),
+('30001', '1159900258963', '', 'Thammasat', 'Kittiphong', 'aa', '1998-03-29', 'Male', '', '0898079946', 'Married', 'Northern');
 
 -- --------------------------------------------------------
 
@@ -107,7 +107,6 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`topic`, `detail`) VALUES
-('', ''),
 ('test', 'hbkubki'),
 ('test2', 'pidfjs0'),
 ('test3', 'xsss');
@@ -130,8 +129,7 @@ CREATE TABLE `staff` (
 INSERT INTO `staff` (`dep_id`, `emp_id`) VALUES
 ('20000', '20001'),
 ('20000', '20002'),
-('20000', '4'),
-('20000', 'eID');
+('20000', '4');
 
 --
 -- Indexes for dumped tables

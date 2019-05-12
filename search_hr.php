@@ -47,8 +47,15 @@ $searching = "Search";
         <aside id="colorlib-aside" role="complementary" class="border js-fullheight">
             <h1 id="colorlib-logo"><a href="add_hr.php"><span>Wo</span><span>rk</span></a></h1>
             <nav id="colorlib-main-menu" role="navigation">
+				<div class="duration-date">
+					<ul class="list-inline">
+						<li><p class="dd-dur" id="date"></p></li>
+						<li><p id="prev" style="cursor:pointer;"><i class="fa fa-caret-left"></i> prev</p></li>
+						<li><p id="next" style="cursor:pointer;">next <i class="fa fa-caret-right"></i></p></li>
+					</ul>
+				</div>
                 <ul>
-                    <li><a href="add_hr.php">Add Emp.</a></li>
+                    <li style="margin-top:20px;"><a href="add_hr.php">Add Emp.</a></li>
                     <li><a href="about_hr.php">About</a></li>
                     <li><a href="news_hr.php">News</a></li>
                     <li><a href="search_hr.php">Search</a></li>
@@ -71,16 +78,6 @@ $searching = "Search";
 		</div>
 	</div>
 </body>
-<!-- MAIN JS -->
 <script src="js/main.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript">
-	var input1 = document.getElementById("go");
-	input1.addEventListener("keyup", function(event) {
-		event.preventDefault();
-		if (event.keyCode === 13) {
-			document.searchMng.submit();
-		}
-	});
-</script>
+
 </html>

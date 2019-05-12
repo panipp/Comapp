@@ -52,14 +52,21 @@
 			<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
 				<h1 id="colorlib-logo"><a href="add_hr.php"><span>Wo</span><span>rk</span></a></h1>
 				<nav id="colorlib-main-menu" role="navigation">
-					<ul>
-						<li><a href="add_hr.php">Add Emp.</a></li>
-						<li><a href="about_hr.php">About</a></li>
-						<li><a href="news_hr.php">News</a></li>
-						<li><a href="search_hr.php">Search</a></li>
-						<li><a href="logout.php" style="color:red;">Logout</a></li>
+				<div class="duration-date">
+					<ul class="list-inline">
+						<li><p class="dd-dur" id="date"></p></li>
+						<li><p id="prev" style="cursor:pointer;"><i class="fa fa-caret-left"></i> prev</p></li>
+						<li><p id="next" style="cursor:pointer;">next <i class="fa fa-caret-right"></i></p></li>
 					</ul>
-				</nav>
+				</div>
+                <ul>
+                    <li style="margin-top:20px;"><a href="add_hr.php">Add Emp.</a></li>
+                    <li><a href="about_hr.php">About</a></li>
+                    <li><a href="news_hr.php">News</a></li>
+                    <li><a href="search_hr.php">Search</a></li>
+					<li><a href="logout.php" style="color:red;">Logout</a></li>
+                </ul>
+            </nav>
 			</aside>
 			<div id="colorlib-main">
 				<div class="colorlib-work">

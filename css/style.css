@@ -38,7 +38,7 @@ input[type=search] {
   box-sizing: content-box;
   font-family: inherit;
   font-size: 80%;
-  background: #ededed url(http://i.imm.io/Q0Jo.png) no-repeat 9px center;
+  background: #ededed no-repeat 9px center;
   border: solid 1px #ccc;
   padding: 9px 10px 9px 32px;
   width: 200px;
@@ -76,7 +76,7 @@ textarea{
     font-weight: 400;
     font-size: 22px;
     text-transform: uppercase;
-    margin-bottom: 3em;
+    margin-bottom: 2.5em;
     display: block;
     width: 100%; }
 #colorlib-aside #colorlib-logo a {
@@ -236,8 +236,17 @@ textarea{
   bottom: 0;
   transform: rotateZ(-45deg); }
 
-.row{
+.row {
   width: 80%;
-    max-width: 1280px;
-    margin: 0 auto;
-}
+  max-width: 1280px;
+  margin: 0 auto; }
+
+.duration-date {
+  line-height: 1;
+  text-align: center;
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.4); }
+.duration-date p {
+  margin: 0px;
+  padding-left: 5px;
+  padding-right: 5px; }
